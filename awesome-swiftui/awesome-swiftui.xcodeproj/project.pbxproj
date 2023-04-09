@@ -71,6 +71,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6407DF9E29E267C00090D271 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6456121E2967B37400EC04BA /* awesome_swiftuiApp.swift */,
+				645612202967B37400EC04BA /* ContentView.swift */,
+				645612222967B37500EC04BA /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6407DF9F29E267C80090D271 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6407DFA029E267D00090D271 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6407DFA129E267D70090D271 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6407DFA229E267DE0090D271 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		645612122967B37400EC04BA = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +132,11 @@
 		6456121D2967B37400EC04BA /* awesome-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				6456121E2967B37400EC04BA /* awesome_swiftuiApp.swift */,
-				645612202967B37400EC04BA /* ContentView.swift */,
-				645612222967B37500EC04BA /* Assets.xcassets */,
+				6407DF9E29E267C00090D271 /* App */,
+				6407DFA129E267D70090D271 /* Models */,
+				6407DFA029E267D00090D271 /* Views */,
+				6407DF9F29E267C80090D271 /* ViewModels */,
+				6407DFA229E267DE0090D271 /* Helpers */,
 				645612242967B37500EC04BA /* Preview Content */,
 			);
 			path = "awesome-swiftui";
