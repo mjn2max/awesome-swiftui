@@ -14,6 +14,7 @@
 		645612302967B37500EC04BA /* awesome_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456122F2967B37500EC04BA /* awesome_swiftuiTests.swift */; };
 		6456123A2967B37500EC04BA /* awesome_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */; };
 		6456123C2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */; };
+		64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		645612352967B37500EC04BA /* awesome-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "awesome-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITests.swift; sourceTree = "<group>"; };
 		6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		6456121D2967B37400EC04BA /* awesome-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				64E2B7E32AF74024005F52E0 /* Extensions */,
 				6407DF9E29E267C00090D271 /* App */,
 				6407DFA129E267D70090D271 /* Models */,
 				6407DFA029E267D00090D271 /* Views */,
@@ -165,6 +168,14 @@
 				6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */,
 			);
 			path = "awesome-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		64E2B7E32AF74024005F52E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
 				6456121F2967B37400EC04BA /* awesome_swiftuiApp.swift in Sources */,
 			);
