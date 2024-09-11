@@ -14,6 +14,8 @@
 		645612302967B37500EC04BA /* awesome_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456122F2967B37500EC04BA /* awesome_swiftuiTests.swift */; };
 		6456123A2967B37500EC04BA /* awesome_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */; };
 		6456123C2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */; };
+		648D5ECB2C914F9900A82896 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648D5ECA2C914F9900A82896 /* HomeView.swift */; };
+		648D5ECD2C91501D00A82896 /* Foundations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648D5ECC2C91501D00A82896 /* Foundations.swift */; };
 		64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		645612352967B37500EC04BA /* awesome-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "awesome-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITests.swift; sourceTree = "<group>"; };
 		6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		648D5ECA2C914F9900A82896 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		648D5ECC2C91501D00A82896 /* Foundations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundations.swift; sourceTree = "<group>"; };
 		64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,34 +87,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		6407DF9F29E267C80090D271 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		6407DFA029E267D00090D271 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		6407DFA129E267D70090D271 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		6407DFA229E267DE0090D271 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		645612122967B37400EC04BA = {
 			isa = PBXGroup;
 			children = (
@@ -134,12 +110,11 @@
 		6456121D2967B37400EC04BA /* awesome-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				64E2B7E32AF74024005F52E0 /* Extensions */,
 				6407DF9E29E267C00090D271 /* App */,
-				6407DFA129E267D70090D271 /* Models */,
-				6407DFA029E267D00090D271 /* Views */,
-				6407DF9F29E267C80090D271 /* ViewModels */,
-				6407DFA229E267DE0090D271 /* Helpers */,
+				648D5EC72C914D9100A82896 /* iOS Demo */,
+				648D5EC82C914DDC00A82896 /* Components */,
+				648D5EC92C914DF200A82896 /* Foundations */,
+				64E2B7E32AF74024005F52E0 /* Extensions */,
 				645612242967B37500EC04BA /* Preview Content */,
 			);
 			path = "awesome-swiftui";
@@ -168,6 +143,53 @@
 				6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */,
 			);
 			path = "awesome-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		648D5EC42C914D6900A82896 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				648D5ECA2C914F9900A82896 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		648D5EC52C914D7300A82896 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				648D5ECC2C91501D00A82896 /* Foundations.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		648D5EC62C914D8400A82896 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		648D5EC72C914D9100A82896 /* iOS Demo */ = {
+			isa = PBXGroup;
+			children = (
+				648D5EC52C914D7300A82896 /* Models */,
+				648D5EC42C914D6900A82896 /* Views */,
+				648D5EC62C914D8400A82896 /* ViewModels */,
+			);
+			path = "iOS Demo";
+			sourceTree = "<group>";
+		};
+		648D5EC82C914DDC00A82896 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		648D5EC92C914DF200A82896 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundations;
 			sourceTree = "<group>";
 		};
 		64E2B7E32AF74024005F52E0 /* Extensions */ = {
@@ -242,7 +264,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = mjn2max.com;
 				TargetAttributes = {
 					6456121A2967B37400EC04BA = {
@@ -310,7 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
+				648D5ECB2C914F9900A82896 /* HomeView.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
+				648D5ECD2C91501D00A82896 /* Foundations.swift in Sources */,
 				6456121F2967B37400EC04BA /* awesome_swiftuiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +408,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -444,6 +469,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
