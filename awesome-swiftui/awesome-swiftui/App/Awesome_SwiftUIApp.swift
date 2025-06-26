@@ -1,5 +1,5 @@
 //
-// awesome_swiftuiApp.swift
+// Awesome_SwiftUIApp.swift.swift
 // awesome-swiftui
 //
 // Created by Huy D. on 1/5/23
@@ -12,7 +12,7 @@
 import SwiftUI
 
 @main
-struct awesome_swiftuiApp: App {
+struct Awesome_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

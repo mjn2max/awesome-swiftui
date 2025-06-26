@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6456121F2967B37400EC04BA /* awesome_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456121E2967B37400EC04BA /* awesome_swiftuiApp.swift */; };
+		6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */; };
 		645612212967B37400EC04BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612202967B37400EC04BA /* ContentView.swift */; };
 		645612232967B37500EC04BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 645612222967B37500EC04BA /* Assets.xcassets */; };
 		645612262967B37500EC04BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 645612252967B37500EC04BA /* Preview Assets.xcassets */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		6456121B2967B37400EC04BA /* awesome-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "awesome-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6456121E2967B37400EC04BA /* awesome_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiApp.swift; sourceTree = "<group>"; };
+		6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_SwiftUIApp.swift; sourceTree = "<group>"; };
 		645612202967B37400EC04BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		645612222967B37500EC04BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		645612252967B37500EC04BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		6407DF9E29E267C00090D271 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6456121E2967B37400EC04BA /* awesome_swiftuiApp.swift */,
+				6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */,
 				645612202967B37400EC04BA /* ContentView.swift */,
 				645612222967B37500EC04BA /* Assets.xcassets */,
 			);
@@ -114,8 +114,7 @@
 			children = (
 				6407DF9E29E267C00090D271 /* App */,
 				647E6F3F2CD46D4F004491ED /* Common */,
-				647E6F3D2CD46CAD004491ED /* Components */,
-				647E6F3E2CD46CBB004491ED /* Foundations */,
+				649463FB2E0D99B300ED1A38 /* Modules */,
 				64E2B7E32AF74024005F52E0 /* Extensions */,
 				645612242967B37500EC04BA /* Preview Content */,
 			);
@@ -150,7 +149,15 @@
 		647E6F3D2CD46CAD004491ED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				647E6F422CD46DAB004491ED /* ComponentsTabView.swift */,
+				649463EF2E0D988B00ED1A38 /* MainView */,
+				649463F72E0D993500ED1A38 /* Controls */,
+				649463F62E0D992F00ED1A38 /* Elements */,
+				649463F52E0D992800ED1A38 /* Layout Fundamentals */,
+				649463F42E0D98C300ED1A38 /* Other Layouts */,
+				649463F32E0D98BC00ED1A38 /* Lists */,
+				649463F22E0D98B400ED1A38 /* Structure */,
+				649463F12E0D98AC00ED1A38 /* Model Presentations */,
+				649463F02E0D98A300ED1A38 /* Other Technologies */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -158,7 +165,9 @@
 		647E6F3E2CD46CBB004491ED /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
-				647E6F442CD46DC1004491ED /* FoundationsTabView.swift */,
+				649463F82E0D996600ED1A38 /* MainView */,
+				649463F92E0D999900ED1A38 /* Apple */,
+				649463FA2E0D999F00ED1A38 /* Customizations */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -169,6 +178,101 @@
 				647E6F402CD46D60004491ED /* Constants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		649463EF2E0D988B00ED1A38 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				647E6F422CD46DAB004491ED /* ComponentsTabView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		649463F02E0D98A300ED1A38 /* Other Technologies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Other Technologies";
+			sourceTree = "<group>";
+		};
+		649463F12E0D98AC00ED1A38 /* Model Presentations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Presentations";
+			sourceTree = "<group>";
+		};
+		649463F22E0D98B400ED1A38 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Structure;
+			sourceTree = "<group>";
+		};
+		649463F32E0D98BC00ED1A38 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		649463F42E0D98C300ED1A38 /* Other Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Other Layouts";
+			sourceTree = "<group>";
+		};
+		649463F52E0D992800ED1A38 /* Layout Fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Layout Fundamentals";
+			sourceTree = "<group>";
+		};
+		649463F62E0D992F00ED1A38 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		649463F72E0D993500ED1A38 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		649463F82E0D996600ED1A38 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				647E6F442CD46DC1004491ED /* FoundationsTabView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		649463F92E0D999900ED1A38 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		649463FA2E0D999F00ED1A38 /* Customizations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Customizations;
+			sourceTree = "<group>";
+		};
+		649463FB2E0D99B300ED1A38 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				647E6F3D2CD46CAD004491ED /* Components */,
+				647E6F3E2CD46CBB004491ED /* Foundations */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		64E2B7E32AF74024005F52E0 /* Extensions */ = {
@@ -313,7 +417,7 @@
 				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
-				6456121F2967B37400EC04BA /* awesome_swiftuiApp.swift in Sources */,
+				6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */,
 				647E6F432CD46DAB004491ED /* ComponentsTabView.swift in Sources */,
 				647E6F412CD46D60004491ED /* Constants.swift in Sources */,
 			);
