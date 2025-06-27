@@ -23,6 +23,11 @@ struct ContentView: View {
                 .tabItem {
                     Label(Constants.foundationsTitle, systemImage: "square.stack.3d.up")
                 }
+
+            SettingsTabView()
+                .tabItem {
+                    Label(Constants.settingsTitle, systemImage: "gear")
+                }
         }
     }
 }

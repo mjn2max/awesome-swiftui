@@ -14,6 +14,7 @@ import SwiftUI
 struct Constants {
     static let componentsTitle: String = "Components"
     static let foundationsTitle: String = "Foundations"
+    static let settingsTitle: String = "Settings"
 }
 
 extension ColorScheme {
