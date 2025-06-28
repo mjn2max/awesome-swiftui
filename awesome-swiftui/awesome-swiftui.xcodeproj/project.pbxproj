@@ -18,6 +18,7 @@
 		647E6F432CD46DAB004491ED /* ComponentsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E6F422CD46DAB004491ED /* ComponentsTabView.swift */; };
 		647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E6F442CD46DC1004491ED /* FoundationsTabView.swift */; };
 		649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649463FD2E0D9A2400ED1A38 /* SettingsTabView.swift */; };
+		649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649464042E0D9B9E00ED1A38 /* CellView.swift */; };
 		64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		647E6F422CD46DAB004491ED /* ComponentsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabView.swift; sourceTree = "<group>"; };
 		647E6F442CD46DC1004491ED /* FoundationsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabView.swift; sourceTree = "<group>"; };
 		649463FD2E0D9A2400ED1A38 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
+		649464042E0D9B9E00ED1A38 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +153,7 @@
 		647E6F3D2CD46CAD004491ED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				649463EF2E0D988B00ED1A38 /* MainView */,
+				649463EF2E0D988B00ED1A38 /* TabView */,
 				649463F72E0D993500ED1A38 /* Controls */,
 				649463F62E0D992F00ED1A38 /* Elements */,
 				649463F52E0D992800ED1A38 /* Layout Fundamentals */,
@@ -167,7 +169,7 @@
 		647E6F3E2CD46CBB004491ED /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
-				649463F82E0D996600ED1A38 /* MainView */,
+				649463F82E0D996600ED1A38 /* TabView */,
 				649463F92E0D999900ED1A38 /* Apple */,
 				649463FA2E0D999F00ED1A38 /* Customizations */,
 			);
@@ -182,12 +184,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		649463EF2E0D988B00ED1A38 /* MainView */ = {
+		649463EF2E0D988B00ED1A38 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
 				647E6F422CD46DAB004491ED /* ComponentsTabView.swift */,
 			);
-			path = MainView;
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		649463F02E0D98A300ED1A38 /* Other Technologies */ = {
@@ -246,12 +248,12 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		649463F82E0D996600ED1A38 /* MainView */ = {
+		649463F82E0D996600ED1A38 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
 				647E6F442CD46DC1004491ED /* FoundationsTabView.swift */,
 			);
-			path = MainView;
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		649463F92E0D999900ED1A38 /* Apple */ = {
@@ -271,6 +273,7 @@
 		649463FB2E0D99B300ED1A38 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				649464032E0D9B8100ED1A38 /* Common */,
 				647E6F3D2CD46CAD004491ED /* Components */,
 				647E6F3E2CD46CBB004491ED /* Foundations */,
 				649463FC2E0D9A0500ED1A38 /* Settings */,
@@ -281,7 +284,7 @@
 		649463FC2E0D9A0500ED1A38 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				649463FF2E0D9A6C00ED1A38 /* MainView */,
+				649463FF2E0D9A6C00ED1A38 /* TabView */,
 				649464002E0D9A7B00ED1A38 /* General */,
 				649464012E0D9A8100ED1A38 /* About */,
 				649464022E0D9A8900ED1A38 /* Other Apps */,
@@ -289,12 +292,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		649463FF2E0D9A6C00ED1A38 /* MainView */ = {
+		649463FF2E0D9A6C00ED1A38 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
 				649463FD2E0D9A2400ED1A38 /* SettingsTabView.swift */,
 			);
-			path = MainView;
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		649464002E0D9A7B00ED1A38 /* General */ = {
@@ -316,6 +319,14 @@
 			children = (
 			);
 			path = "Other Apps";
+			sourceTree = "<group>";
+		};
+		649464032E0D9B8100ED1A38 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				649464042E0D9B9E00ED1A38 /* CellView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		64E2B7E32AF74024005F52E0 /* Extensions */ = {
@@ -461,6 +472,7 @@
 				649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
+				649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */,
 				6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */,
 				647E6F432CD46DAB004491ED /* ComponentsTabView.swift in Sources */,
 				647E6F412CD46D60004491ED /* Constants.swift in Sources */,
