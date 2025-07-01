@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		642673872E118B3B0047D30F /* FoundationsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673862E118B3B0047D30F /* FoundationsTabModel.swift */; };
 		642673892E118B750047D30F /* SettingsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673882E118B750047D30F /* SettingsTabModel.swift */; };
+		6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426738A2E118BD90047D30F /* ComponentsTabViewModel.swift */; };
+		6426738D2E118C6E0047D30F /* BaseWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426738C2E118C6E0047D30F /* BaseWrapperView.swift */; };
 		6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */; };
 		645612212967B37400EC04BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612202967B37400EC04BA /* ContentView.swift */; };
 		645612232967B37500EC04BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 645612222967B37500EC04BA /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		642673862E118B3B0047D30F /* FoundationsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabModel.swift; sourceTree = "<group>"; };
 		642673882E118B750047D30F /* SettingsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabModel.swift; sourceTree = "<group>"; };
+		6426738A2E118BD90047D30F /* ComponentsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabViewModel.swift; sourceTree = "<group>"; };
+		6426738C2E118C6E0047D30F /* BaseWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWrapperView.swift; sourceTree = "<group>"; };
 		6456121B2967B37400EC04BA /* awesome-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "awesome-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_SwiftUIApp.swift; sourceTree = "<group>"; };
 		645612202967B37400EC04BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			children = (
 				64ED31F22E0EC53300114A19 /* ComponentsTabModel.swift */,
 				647E6F422CD46DAB004491ED /* ComponentsTabView.swift */,
+				6426738A2E118BD90047D30F /* ComponentsTabViewModel.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				649464042E0D9B9E00ED1A38 /* CellView.swift */,
+				6426738C2E118C6E0047D30F /* BaseWrapperView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -481,10 +487,12 @@
 				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
 				649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
+				6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
 				649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */,
 				6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */,
 				647E6F432CD46DAB004491ED /* ComponentsTabView.swift in Sources */,
+				6426738D2E118C6E0047D30F /* BaseWrapperView.swift in Sources */,
 				64ED31F32E0EC53300114A19 /* ComponentsTabModel.swift in Sources */,
 				642673872E118B3B0047D30F /* FoundationsTabModel.swift in Sources */,
 				647E6F412CD46D60004491ED /* Constants.swift in Sources */,

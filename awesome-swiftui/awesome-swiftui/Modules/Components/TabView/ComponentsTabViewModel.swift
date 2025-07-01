@@ -1,0 +1,25 @@
+//
+// ComponentsTabViewModel.swift
+// awesome-swiftui
+//
+// Created by Huy D. on 6/29/25
+// mjn2max.github.io 😜
+// 
+// Copyright © 2025. All rights reserved.
+// mjn2max.com
+//
+
+import Foundation
+
+class ComponentsViewModel: ObservableObject {
+    @Published var searchText: String = .init()
+
+    let componentList: [ComponentItem] = [
+        // Controls
+        .init(data: ComponentControl.buttonLink , section: .controls),
+        .init(data: ComponentControl.menu, section: .controls),
+        .init(data: ComponentControl.valueInput, section: .controls),
+        .init(data: ComponentControl.picker, section: .controls),
+        .init(data: ComponentControl.indicator, section: .controls),
+    ]
+}
