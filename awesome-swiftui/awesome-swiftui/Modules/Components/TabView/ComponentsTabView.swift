@@ -12,6 +12,8 @@
 import SwiftUI
 
 struct ComponentsTabView: View {
+    @ObservedObject private var viewModel: ComponentsViewModel = .init()
+    
     var body: some View {
         Text("ComponentsTabView")
     }

@@ -11,7 +11,7 @@
 
 import Foundation
 
-enum ComponentsTabModel: CaseIterable {
+enum ComponentsSection: CaseIterable {
     case controls, elements, layoutFundamentals, otherLayouts, lists, structure, modelPresentations, otherTechnologies
 
     var title: String {
@@ -25,5 +25,19 @@ enum ComponentsTabModel: CaseIterable {
         case .modelPresentations: return "Model Presentations"
         case .otherTechnologies: return "Other Technologies"
         }
+    }
+}
+
+struct ComponentItem: Identifiable, Hashable, Equatable {
+    let id: UUID = .init()
+    let data: any ItemProtocol
+    let section: ComponentsSection
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: ComponentItem, rhs: ComponentItem) -> Bool {
+        lhs.id == rhs.id
     }
 }
