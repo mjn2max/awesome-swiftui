@@ -16,6 +16,12 @@ struct CellView: View {
     let title: String
     let detailText: String?
 
+    init(icon: String, title: String, detailText: String? = nil) {
+        self.icon = icon
+        self.title = title
+        self.detailText = detailText
+    }
+
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
