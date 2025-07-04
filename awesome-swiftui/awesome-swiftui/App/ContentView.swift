@@ -29,6 +29,7 @@ struct ContentView: View {
                     Label(Constants.settingsTitle, systemImage: "gear")
                 }
         }
+        .accentColor(.red)
     }
 }
 

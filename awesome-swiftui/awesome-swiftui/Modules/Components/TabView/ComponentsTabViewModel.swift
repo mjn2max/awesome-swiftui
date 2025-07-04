@@ -21,5 +21,11 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentControl.valueInput, section: .controls),
         .init(data: ComponentControl.picker, section: .controls),
         .init(data: ComponentControl.indicator, section: .controls),
+
+        // Elements
+        .init(data: ComponentElement.image, section: .elements),
+        .init(data: ComponentElement.shape, section: .elements),
+        .init(data: ComponentElement.text, section: .elements),
+        .init(data: ComponentElement.textField, section: .elements),
     ]
 }
