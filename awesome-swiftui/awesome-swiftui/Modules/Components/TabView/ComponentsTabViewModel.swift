@@ -35,5 +35,13 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentLayoutFundamental.backgroundOverlay, section: .layoutFundamentals),
         .init(data: ComponentLayoutFundamental.viewThatFits, section: .layoutFundamentals),
         .init(data: ComponentLayoutFundamental.zIndex, section: .layoutFundamentals),
+
+        // Other Layouts
+        .init(data: ComponentOtherLayout.table, section: .otherLayouts),
+        .init(data: ComponentOtherLayout.group, section: .otherLayouts),
+        .init(data: ComponentOtherLayout.scrollView, section: .otherLayouts),
+        .init(data: ComponentOtherLayout.frame, section: .otherLayouts),
+        .init(data: ComponentOtherLayout.containerRelativeFrame, section: .otherLayouts),
+        .init(data: ComponentOtherLayout.safeAreaInsets, section: .otherLayouts),
     ]
 }
