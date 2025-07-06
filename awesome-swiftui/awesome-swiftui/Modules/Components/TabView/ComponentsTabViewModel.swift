@@ -27,5 +27,13 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentElement.shape, section: .elements),
         .init(data: ComponentElement.text, section: .elements),
         .init(data: ComponentElement.textField, section: .elements),
+
+        // Layout Fundamentals
+        .init(data: ComponentLayoutFundamental.stack, section: .layoutFundamentals),
+        .init(data: ComponentLayoutFundamental.grid, section: .layoutFundamentals),
+        .init(data: ComponentLayoutFundamental.separator, section: .layoutFundamentals),
+        .init(data: ComponentLayoutFundamental.backgroundOverlay, section: .layoutFundamentals),
+        .init(data: ComponentLayoutFundamental.viewThatFits, section: .layoutFundamentals),
+        .init(data: ComponentLayoutFundamental.zIndex, section: .layoutFundamentals),
     ]
 }

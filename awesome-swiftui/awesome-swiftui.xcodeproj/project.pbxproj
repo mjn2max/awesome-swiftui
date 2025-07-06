@@ -25,6 +25,7 @@
 		649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649463FD2E0D9A2400ED1A38 /* SettingsTabView.swift */; };
 		649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649464042E0D9B9E00ED1A38 /* CellView.swift */; };
 		64BE0CD82E1571590014FD37 /* Components+ElementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE0CD72E1571590014FD37 /* Components+ElementsModel.swift */; };
+		64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */; };
 		64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */; };
 		64ED31F32E0EC53300114A19 /* ComponentsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED31F22E0EC53300114A19 /* ComponentsTabModel.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		649463FD2E0D9A2400ED1A38 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		649464042E0D9B9E00ED1A38 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		64BE0CD72E1571590014FD37 /* Components+ElementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+ElementsModel.swift"; sourceTree = "<group>"; };
+		64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+LayoutFundamentalsModel.swift"; sourceTree = "<group>"; };
 		64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		64ED31F22E0EC53300114A19 /* ComponentsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +248,7 @@
 		649463F52E0D992800ED1A38 /* Layout Fundamentals */ = {
 			isa = PBXGroup;
 			children = (
+				64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */,
 			);
 			path = "Layout Fundamentals";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */,
 				6426738F2E1311FE0047D30F /* Components+ControlsModel.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
+				64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */,
 				6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */,
 				64BE0CD82E1571590014FD37 /* Components+ElementsModel.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
