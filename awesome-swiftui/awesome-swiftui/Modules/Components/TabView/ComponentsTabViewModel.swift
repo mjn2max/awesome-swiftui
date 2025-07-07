@@ -4,7 +4,7 @@
 //
 // Created by Huy D. on 6/29/25
 // mjn2max.github.io 😜
-// 
+//
 // Copyright © 2025. All rights reserved.
 // mjn2max.com
 //
@@ -43,5 +43,10 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentOtherLayout.frame, section: .otherLayouts),
         .init(data: ComponentOtherLayout.containerRelativeFrame, section: .otherLayouts),
         .init(data: ComponentOtherLayout.safeAreaInsets, section: .otherLayouts),
+
+        // Lists
+        .init(data: ComponentList.list, section: .lists),
+        .init(data: ComponentList.disclosureGroup, section: .lists),
+        .init(data: ComponentList.outlineGroup, section: .lists),
     ]
 }
