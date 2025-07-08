@@ -21,6 +21,7 @@
 		6456123C2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */; };
 		646EAB6E2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB6D2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift */; };
 		646EAB702E1A985200211DC2 /* Components+ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB6F2E1A985200211DC2 /* Components+ListModel.swift */; };
+		646EAB722E1A98B200211DC2 /* Components+StructureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB712E1A98B200211DC2 /* Components+StructureModel.swift */; };
 		647E6F412CD46D60004491ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E6F402CD46D60004491ED /* Constants.swift */; };
 		647E6F432CD46DAB004491ED /* ComponentsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E6F422CD46DAB004491ED /* ComponentsTabView.swift */; };
 		647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E6F442CD46DC1004491ED /* FoundationsTabView.swift */; };
@@ -67,6 +68,7 @@
 		6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		646EAB6D2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+OtherLayoutsModel.swift"; sourceTree = "<group>"; };
 		646EAB6F2E1A985200211DC2 /* Components+ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+ListModel.swift"; sourceTree = "<group>"; };
+		646EAB712E1A98B200211DC2 /* Components+StructureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+StructureModel.swift"; sourceTree = "<group>"; };
 		647E6F402CD46D60004491ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		647E6F422CD46DAB004491ED /* ComponentsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabView.swift; sourceTree = "<group>"; };
 		647E6F442CD46DC1004491ED /* FoundationsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		649463F22E0D98B400ED1A38 /* Structure */ = {
 			isa = PBXGroup;
 			children = (
+				646EAB712E1A98B200211DC2 /* Components+StructureModel.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
 				649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */,
 				6426738F2E1311FE0047D30F /* Components+ControlsModel.swift in Sources */,
+				646EAB722E1A98B200211DC2 /* Components+StructureModel.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
 				646EAB702E1A985200211DC2 /* Components+ListModel.swift in Sources */,
 				64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */,

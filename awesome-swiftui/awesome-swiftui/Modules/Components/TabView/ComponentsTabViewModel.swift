@@ -48,5 +48,14 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentList.list, section: .lists),
         .init(data: ComponentList.disclosureGroup, section: .lists),
         .init(data: ComponentList.outlineGroup, section: .lists),
+
+        // Structure
+        .init(data: ComponentStructure.tabView, section: .structure),
+        // .init(data: ComponentStructure.splitView, section: .structure),
+        .init(data: ComponentStructure.navigationStack, section: .structure),
+        .init(data: ComponentStructure.navigationSplitView, section: .structure),
+        .init(data: ComponentStructure.search, section: .structure),
+        .init(data: ComponentStructure.toolbars, section: .structure),
+        // .init(data: ComponentStructure.windowGroup, section: .structure),
     ]
 }
