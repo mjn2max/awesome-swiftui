@@ -57,5 +57,13 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentStructure.search, section: .structure),
         .init(data: ComponentStructure.toolbars, section: .structure),
         // .init(data: ComponentStructure.windowGroup, section: .structure),
+
+        // Model Presentations
+        .init(data: ComponentModelPresentation.alert, section: .modelPresentations),
+        .init(data: ComponentModelPresentation.confirmationDialog, section: .modelPresentations),
+        .init(data: ComponentModelPresentation.notification, section: .modelPresentations),
+        .init(data: ComponentModelPresentation.sheet, section: .modelPresentations),
+        .init(data: ComponentModelPresentation.inspector, section: .modelPresentations),
+        .init(data: ComponentModelPresentation.popover, section: .modelPresentations),
     ]
 }
