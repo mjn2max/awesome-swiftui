@@ -65,5 +65,12 @@ class ComponentsViewModel: ObservableObject {
         .init(data: ComponentModelPresentation.sheet, section: .modelPresentations),
         .init(data: ComponentModelPresentation.inspector, section: .modelPresentations),
         .init(data: ComponentModelPresentation.popover, section: .modelPresentations),
+
+        // Other Technologies
+        .init(data: ComponentOtherTechnology.chart, section: .otherTechnologies),
+        .init(data: ComponentOtherTechnology.map, section: .otherTechnologies),
+        .init(data: ComponentOtherTechnology.tip, section: .otherTechnologies),
+        .init(data: ComponentOtherTechnology.media, section: .otherTechnologies),
+        .init(data: ComponentOtherTechnology.privacyApplePay, section: .otherTechnologies)
     ]
 }
