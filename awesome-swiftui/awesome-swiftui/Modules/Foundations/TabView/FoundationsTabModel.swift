@@ -21,3 +21,17 @@ enum FoundationSection: CaseIterable {
         }
     }
 }
+
+struct FoundationItem: Identifiable, Hashable, Equatable {
+    let id: UUID = .init()
+    let data: any ItemProtocol
+    let section: FoundationSection
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: FoundationItem, rhs: FoundationItem) -> Bool {
+        lhs.id == rhs.id
+    }
+}

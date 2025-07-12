@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641D66162E1FD21C0071ECDA /* FoundationsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D66152E1FD21C0071ECDA /* FoundationsTabViewModel.swift */; };
 		642673872E118B3B0047D30F /* FoundationsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673862E118B3B0047D30F /* FoundationsTabModel.swift */; };
 		642673892E118B750047D30F /* SettingsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673882E118B750047D30F /* SettingsTabModel.swift */; };
 		6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426738A2E118BD90047D30F /* ComponentsTabViewModel.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		641D66152E1FD21C0071ECDA /* FoundationsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabViewModel.swift; sourceTree = "<group>"; };
 		642673862E118B3B0047D30F /* FoundationsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabModel.swift; sourceTree = "<group>"; };
 		642673882E118B750047D30F /* SettingsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabModel.swift; sourceTree = "<group>"; };
 		6426738A2E118BD90047D30F /* ComponentsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabViewModel.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				642673862E118B3B0047D30F /* FoundationsTabModel.swift */,
 				647E6F442CD46DC1004491ED /* FoundationsTabView.swift */,
+				641D66152E1FD21C0071ECDA /* FoundationsTabViewModel.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				646EAB6E2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift in Sources */,
 				6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */,
 				64D5555B2E1D090700277777 /* Components+OtherTechnologiesModel.swift in Sources */,
+				641D66162E1FD21C0071ECDA /* FoundationsTabViewModel.swift in Sources */,
 				64BE0CD82E1571590014FD37 /* Components+ElementsModel.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
 				649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */,
