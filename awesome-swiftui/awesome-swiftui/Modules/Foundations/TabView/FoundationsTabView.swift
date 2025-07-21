@@ -12,8 +12,27 @@
 import SwiftUI
 
 struct FoundationsTabView: View {
+    @ObservedObject private var viewModel: FoundationsViewModel = .init()
+
     var body: some View {
-        Text("FoundationsTabView")
+        NavigationStack {
+            List {
+                ForEach(FoundationSection.allCases, id: \.self) { section in
+                    Section(section.title) {
+                        let items = viewModel.foundationList.filter { $0.section == section }
+                        ForEach(items) { item in
+                            NavigationLink(value: item) {
+                                CellView(icon: item.data.sfSymbol, title: item.data.title)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle(Constants.foundationsTitle)
+            .navigationDestination(for: FoundationItem.self) { item in
+                BaseWrapperView(for: item.data)
+            }
+        }
     }
 }
 
