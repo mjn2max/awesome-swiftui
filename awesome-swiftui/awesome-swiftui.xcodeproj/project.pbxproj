@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64090CA52E247E5F001FB20B /* Foundations+CustomizationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64090CA42E247E5F001FB20B /* Foundations+CustomizationsModel.swift */; };
 		641D66162E1FD21C0071ECDA /* FoundationsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D66152E1FD21C0071ECDA /* FoundationsTabViewModel.swift */; };
 		642673872E118B3B0047D30F /* FoundationsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673862E118B3B0047D30F /* FoundationsTabModel.swift */; };
 		642673892E118B750047D30F /* SettingsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642673882E118B750047D30F /* SettingsTabModel.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64090CA42E247E5F001FB20B /* Foundations+CustomizationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundations+CustomizationsModel.swift"; sourceTree = "<group>"; };
 		641D66152E1FD21C0071ECDA /* FoundationsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabViewModel.swift; sourceTree = "<group>"; };
 		642673862E118B3B0047D30F /* FoundationsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsTabModel.swift; sourceTree = "<group>"; };
 		642673882E118B750047D30F /* SettingsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabModel.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		649463FA2E0D999F00ED1A38 /* Customizations */ = {
 			isa = PBXGroup;
 			children = (
+				64090CA42E247E5F001FB20B /* Foundations+CustomizationsModel.swift */,
 			);
 			path = Customizations;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				646EAB702E1A985200211DC2 /* Components+ListModel.swift in Sources */,
 				64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */,
 				646EAB6E2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift in Sources */,
+				64090CA52E247E5F001FB20B /* Foundations+CustomizationsModel.swift in Sources */,
 				6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */,
 				64D5555B2E1D090700277777 /* Components+OtherTechnologiesModel.swift in Sources */,
 				641D66162E1FD21C0071ECDA /* FoundationsTabViewModel.swift in Sources */,
