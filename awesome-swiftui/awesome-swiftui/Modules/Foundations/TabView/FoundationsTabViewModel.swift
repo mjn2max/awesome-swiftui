@@ -27,6 +27,12 @@ class FoundationsViewModel: ObservableObject {
         .init(data: FoundationApple.material, section: .apple),
         .init(data: FoundationApple.typography, section: .apple),
         .init(data: FoundationApple.userInput, section: .apple),
+
+        // Others
+        .init(data: FoundationCustomization.background, section: .customizations),
+        .init(data: FoundationCustomization.demo1, section: .customizations),
+        .init(data: FoundationCustomization.demo2, section: .customizations),
+        .init(data: FoundationCustomization.demo3, section: .customizations),
+        .init(data: FoundationCustomization.demo4, section: .customizations)
     ]
 }
-
