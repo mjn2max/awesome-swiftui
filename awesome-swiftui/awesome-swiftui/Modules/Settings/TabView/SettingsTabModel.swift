@@ -22,3 +22,17 @@ enum SettingSection: CaseIterable {
         }
     }
 }
+
+struct SettingItem: Identifiable, Hashable, Equatable {
+    let id: UUID = .init()
+    let data: any ItemProtocol
+    let section: SettingSection
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: SettingItem, rhs: SettingItem) -> Bool {
+        lhs.id == rhs.id
+    }
+}
