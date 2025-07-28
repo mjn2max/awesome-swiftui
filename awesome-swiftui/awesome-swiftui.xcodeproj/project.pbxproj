@@ -34,6 +34,7 @@
 		649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649464042E0D9B9E00ED1A38 /* CellView.swift */; };
 		64BE0CD82E1571590014FD37 /* Components+ElementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE0CD72E1571590014FD37 /* Components+ElementsModel.swift */; };
 		64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */; };
+		64D127A32E36BD17005448E8 /* Settings+GeneralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D127A22E36BD17005448E8 /* Settings+GeneralModel.swift */; };
 		64D5555B2E1D090700277777 /* Components+OtherTechnologiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D5555A2E1D090700277777 /* Components+OtherTechnologiesModel.swift */; };
 		64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */; };
 		64ED31F32E0EC53300114A19 /* ComponentsTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED31F22E0EC53300114A19 /* ComponentsTabModel.swift */; };
@@ -87,6 +88,7 @@
 		649464042E0D9B9E00ED1A38 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		64BE0CD72E1571590014FD37 /* Components+ElementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+ElementsModel.swift"; sourceTree = "<group>"; };
 		64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+LayoutFundamentalsModel.swift"; sourceTree = "<group>"; };
+		64D127A22E36BD17005448E8 /* Settings+GeneralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+GeneralModel.swift"; sourceTree = "<group>"; };
 		64D5555A2E1D090700277777 /* Components+OtherTechnologiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+OtherTechnologiesModel.swift"; sourceTree = "<group>"; };
 		64E2B7E42AF74067005F52E0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		64ED31F22E0EC53300114A19 /* ComponentsTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTabModel.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		649464002E0D9A7B00ED1A38 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				64D127A22E36BD17005448E8 /* Settings+GeneralModel.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				6426738B2E118BD90047D30F /* ComponentsTabViewModel.swift in Sources */,
 				64D5555B2E1D090700277777 /* Components+OtherTechnologiesModel.swift in Sources */,
 				641D66162E1FD21C0071ECDA /* FoundationsTabViewModel.swift in Sources */,
+				64D127A32E36BD17005448E8 /* Settings+GeneralModel.swift in Sources */,
 				64BE0CD82E1571590014FD37 /* Components+ElementsModel.swift in Sources */,
 				645612212967B37400EC04BA /* ContentView.swift in Sources */,
 				649464052E0D9B9E00ED1A38 /* CellView.swift in Sources */,
