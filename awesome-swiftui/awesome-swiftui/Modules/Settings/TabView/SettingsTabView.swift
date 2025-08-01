@@ -41,6 +41,35 @@ struct SettingsTabView: View {
     }
 }
 
+fileprivate struct General_ColorSchemeView: View {
+    let sfSymbol: String
+    let titleText: String
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: sfSymbol)
+                .font(.body)
+                .frame(width: 24, height: 24)
+                .foregroundStyle(themeManager.accentColor)
+
+            Text(titleText)
+
+            Spacer(minLength: 8)
+            Picker("", selection: $themeManager.colorScheme) {
+                ForEach(General_ColorSchemeModel.allCases, id: \.self) {
+                    Text($0.title)
+                        .tag($0.rawValue)
+                        .font(.callout)
+                        .foregroundStyle(.gray)
+                }
+
+            }
+            .pickerStyle(.navigationLink)
+            .padding(.vertical, -12)
+        }
+    }
+}
+
 #Preview {
     SettingsTabView()
 }
