@@ -38,7 +38,12 @@ enum ComponentLayoutFundamental: ItemProtocol {
 
     @ViewBuilder
     var contentView: some View {
-        // TODO: Add detail views
-        EmptyView()
+        switch self {
+        case .separator:
+            Separators()
+        default:
+            // TODO: Add detail views
+            EmptyView()
+        }
     }
 }

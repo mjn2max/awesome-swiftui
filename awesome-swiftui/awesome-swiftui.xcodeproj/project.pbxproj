@@ -20,6 +20,7 @@
 		6441B5F42E47FF780028399E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5F32E47FF780028399E /* Shapes.swift */; };
 		6441B5F82E4800840028399E /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5F72E4800840028399E /* Texts.swift */; };
 		6441B5FA2E48026F0028399E /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5F92E48026F0028399E /* Charts.swift */; };
+		6441B5FC2E4803480028399E /* Separators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5FB2E4803480028399E /* Separators.swift */; };
 		6451699B2E2F968C00EB808D /* SettingsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451699A2E2F968C00EB808D /* SettingsTabViewModel.swift */; };
 		6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */; };
 		645612212967B37400EC04BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612202967B37400EC04BA /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		6441B5F32E47FF780028399E /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		6441B5F72E4800840028399E /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		6441B5F92E48026F0028399E /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		6441B5FB2E4803480028399E /* Separators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separators.swift; sourceTree = "<group>"; };
 		6451699A2E2F968C00EB808D /* SettingsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewModel.swift; sourceTree = "<group>"; };
 		6456121B2967B37400EC04BA /* awesome-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "awesome-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				64BE0CDF2E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift */,
+				6441B5FB2E4803480028399E /* Separators.swift */,
 			);
 			path = "Layout Fundamentals";
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				6426738F2E1311FE0047D30F /* Components+ControlsModel.swift in Sources */,
 				646EAB722E1A98B200211DC2 /* Components+StructureModel.swift in Sources */,
 				6462413D2E1E7B67005AF435 /* Foundations+AppleModel.swift in Sources */,
+				6441B5FC2E4803480028399E /* Separators.swift in Sources */,
 				647E6F452CD46DC1004491ED /* FoundationsTabView.swift in Sources */,
 				646EAB702E1A985200211DC2 /* Components+ListModel.swift in Sources */,
 				64BE0CE02E16D1770014FD37 /* Components+LayoutFundamentalsModel.swift in Sources */,
