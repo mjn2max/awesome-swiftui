@@ -28,5 +28,7 @@ struct BaseWrapperView: View {
 
     var body: some View {
         AnyView(itemData.contentView)
+            .navigationTitle(itemData.title)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }

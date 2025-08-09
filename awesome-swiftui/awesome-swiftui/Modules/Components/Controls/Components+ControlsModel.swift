@@ -39,8 +39,8 @@ enum ComponentControl: ItemProtocol {
         switch self {
         case .buttonLink:
             ButtonsLinks()
-                .navigationTitle(title)
-                .navigationBarTitleDisplayMode(.inline)
+        case .indicator:
+            Indicator()
         default:
             // TODO: Add detail views
             EmptyView()
