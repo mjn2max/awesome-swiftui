@@ -36,7 +36,12 @@ enum ComponentOtherTechnology: ItemProtocol {
 
     @ViewBuilder
     var contentView: some View {
-        // TODO: Add detail views
-        EmptyView()
+        switch self {
+        case .chart:
+            Charts()
+        default:
+            // TODO: Add detail views
+            EmptyView()
+        }
     }
 }
