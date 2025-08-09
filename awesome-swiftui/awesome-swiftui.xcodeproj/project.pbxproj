@@ -17,6 +17,7 @@
 		6434C78A2E1C74CB0003C5D8 /* Components+ModelPresentationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6434C7892E1C74CB0003C5D8 /* Components+ModelPresentationsModel.swift */; };
 		6441B5F02E47FB5D0028399E /* ButtonsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5EF2E47FB5D0028399E /* ButtonsLinks.swift */; };
 		6441B5F22E47FE410028399E /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5F12E47FE410028399E /* Indicator.swift */; };
+		6441B5F42E47FF780028399E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B5F32E47FF780028399E /* Shapes.swift */; };
 		6451699B2E2F968C00EB808D /* SettingsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451699A2E2F968C00EB808D /* SettingsTabViewModel.swift */; };
 		6456121F2967B37400EC04BA /* Awesome_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */; };
 		645612212967B37400EC04BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612202967B37400EC04BA /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 		6434C7892E1C74CB0003C5D8 /* Components+ModelPresentationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+ModelPresentationsModel.swift"; sourceTree = "<group>"; };
 		6441B5EF2E47FB5D0028399E /* ButtonsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsLinks.swift; sourceTree = "<group>"; };
 		6441B5F12E47FE410028399E /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		6441B5F32E47FF780028399E /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		6451699A2E2F968C00EB808D /* SettingsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewModel.swift; sourceTree = "<group>"; };
 		6456121B2967B37400EC04BA /* awesome-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "awesome-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6456121E2967B37400EC04BA /* Awesome_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				64BE0CD72E1571590014FD37 /* Components+ElementsModel.swift */,
+				6441B5F32E47FF780028399E /* Shapes.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				642673892E118B750047D30F /* SettingsTabModel.swift in Sources */,
+				6441B5F42E47FF780028399E /* Shapes.swift in Sources */,
 				64E2B7E52AF74067005F52E0 /* UIApplicationExtension.swift in Sources */,
 				649463FE2E0D9A2400ED1A38 /* SettingsTabView.swift in Sources */,
 				6426738F2E1311FE0047D30F /* Components+ControlsModel.swift in Sources */,
