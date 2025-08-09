@@ -36,7 +36,14 @@ enum ComponentControl: ItemProtocol {
 
     @ViewBuilder
     var contentView: some View {
-        // TODO: Add detail views
-        EmptyView()
+        switch self {
+        case .buttonLink:
+            ButtonsLinks()
+                .navigationTitle(title)
+                .navigationBarTitleDisplayMode(.inline)
+        default:
+            // TODO: Add detail views
+            EmptyView()
+        }
     }
 }
