@@ -37,6 +37,8 @@ enum ComponentElement: ItemProtocol {
         switch self {
         case .shape:
             Shapes()
+        case .text:
+            Texts()
         default:
             // TODO: Add detail views
             EmptyView()
