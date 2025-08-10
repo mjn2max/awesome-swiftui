@@ -10,6 +10,16 @@ A curated collection of the best SwiftUI resources, libraries, tutorials, and pr
 
 ---
 
+## Screenshots
+
+| Screenshot             | Screenshot             | Screenshot             |
+| ---------------------- | ---------------------- | ---------------------- |
+| <img src="Demo/1.png"> | <img src="Demo/2.png"> | <img src="Demo/3.png"> |
+| ---------------------- | ---------------------- | ---------------------- |
+| <img src="Demo/4.png"> | <img src="Demo/5.png"> | <img src="Demo/6.png"> |
+| ---------------------- | ---------------------- | ---------------------- |
+| <img src="Demo/7.png"> | <img src="Demo/8.png"> | <img src="Demo/9.png"> |
+
 ## Credits
 
 This project was made possible thanks to the heavy inspiration and resources from various contributors and communities on the internet. A special thanks goes out to:
