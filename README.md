@@ -1,12 +1,34 @@
 # Awesome SwiftUI Collections 🚀🎨
 
-A curated collection of the best SwiftUI resources, libraries, tutorials, and projects to help developers create stunning and functional apps effortlessly. Whether you’re a beginner or an experienced developer, this repository has something for everyone!
+Welcome to **Awesome SwiftUI**! This is an open-source, curated list of the best SwiftUI resources, libraries, tutorials, and projects to help developers create stunning and functional apps effortlessly. Whether you’re a beginner or an experienced developer, this repository has something for everyone!
+
+**Contributions are highly encouraged to help us make this list even more awesome!**
 
 ## Components
+
+- UI Elements (Buttons, Lists, Pickers, etc.)
+- Layouts & Containers
+- Animations & Transitions
+- Charts & Graphs
+- Navigation
+- Media (Images, Video, Audio)
+- Other Useful Components
 
 ---
 
 ## Foundations
+
+- Accessibility
+- Animation
+- Colors
+- Effects
+- Environment
+- Gestures
+- Haptics
+- Iconography
+- Materials
+- Typography
+- User Input
 
 ---
 
@@ -15,10 +37,18 @@ A curated collection of the best SwiftUI resources, libraries, tutorials, and pr
 | Screenshot             | Screenshot             | Screenshot             |
 | ---------------------- | ---------------------- | ---------------------- |
 | <img src="Demo/1.png"> | <img src="Demo/2.png"> | <img src="Demo/3.png"> |
-| ---------------------- | ---------------------- | ---------------------- |
 | <img src="Demo/4.png"> | <img src="Demo/5.png"> | <img src="Demo/6.png"> |
-| ---------------------- | ---------------------- | ---------------------- |
 | <img src="Demo/7.png"> | <img src="Demo/8.png"> | <img src="Demo/9.png"> |
+
+## Contributing
+
+Contributions are welcome! To add a new resource or improve this list:
+
+1. **Fork** this repository.
+2. **Add your resource** in the appropriate section with a short description.
+3. **Submit a pull request** with your changes.
+
+Please make sure your additions are valuable and relevant to the SwiftUI community. Thank you for helping us grow this collection!
 
 ## Credits
 
