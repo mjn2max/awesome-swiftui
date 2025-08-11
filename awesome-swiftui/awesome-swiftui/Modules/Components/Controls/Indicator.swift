@@ -133,10 +133,10 @@ private struct BarProgressIndicator: View {
 
 private struct RotatingSegmentsIndicator: View {
     @State private var rotation: Double = 0
-    let segments = 12
+    let segments: Int = 12
     var body: some View {
         ZStack {
-            ForEach(0..<segments) { i in
+            ForEach(0..<segments, id: \.self) { i in
                 Capsule()
                     .fill(Color.accentColor.opacity(Double(i+1)/Double(segments)))
                     .frame(width: 4, height: 12)

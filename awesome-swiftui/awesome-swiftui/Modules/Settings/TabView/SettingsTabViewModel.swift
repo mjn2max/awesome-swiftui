@@ -29,5 +29,12 @@ class SettingsViewModel: ObservableObject {
         .init(data: SettingAbout.contact, section: .about),
         .init(data: SettingAbout.rateOnAppStore, section: .about),
         .init(data: SettingAbout.appVersion, section: .about),
+
+        // Other App
+        .init(data: SettingOtherApps.app1, section: .otherApps),
+        .init(data: SettingOtherApps.app2, section: .otherApps),
+        .init(data: SettingOtherApps.app3, section: .otherApps),
+        .init(data: SettingOtherApps.app4, section: .otherApps),
+        .init(data: SettingOtherApps.app5, section: .otherApps),
     ]
 }
