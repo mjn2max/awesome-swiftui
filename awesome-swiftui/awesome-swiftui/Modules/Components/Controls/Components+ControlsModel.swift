@@ -39,6 +39,8 @@ enum ComponentControl: ItemProtocol {
         switch self {
         case .buttonLink:
             ButtonsLinks()
+        case .menu:
+            Menus()
         case .indicator:
             Indicator()
         default:
