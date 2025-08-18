@@ -12,6 +12,12 @@
 import SwiftUI
 
 struct Menus: View {
+    @State private var selectedColor = "Red"
+    @State private var showRead = true
+    @State private var showStarred = false
+    private let colorOptions = ["Red", "Green", "Blue", "Purple"]
+    private let folders = ["Home", "Work", "Travel", "Personal"]
+
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 20) {
@@ -98,6 +104,130 @@ struct Menus: View {
                             .padding(.vertical, 8)
                             .background(Color.blue.opacity(0.2))
                             .cornerRadius(8)
+                    }
+                }
+
+                // 7. Menu with Checkmark Selection
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("7. Menu with Checkmark Selection")
+                        .font(.headline)
+                    Menu {
+                        ForEach(colorOptions, id: \.self) { option in
+                            Button {
+                                selectedColor = option
+                            } label: {
+                                HStack {
+                                    Text(option)
+                                    Spacer()
+                                    if selectedColor == option {
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
+                        }
+                    } label: {
+                        Label("Selected: \(selectedColor)", systemImage: "paintpalette")
+                    }
+                }
+
+                // 8. Menu with Toggle-like Filters
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("8. Menu with Toggle-like Filters")
+                        .font(.headline)
+                    Menu {
+                        Button {
+                            showRead.toggle()
+                        } label: {
+                            Label(showRead ? "Hide Read" : "Show Read", systemImage: showRead ? "checkmark.circle.fill" : "circle")
+                        }
+                        Button {
+                            showStarred.toggle()
+                        } label: {
+                            Label(showStarred ? "Hide Starred" : "Show Starred", systemImage: showStarred ? "star.fill" : "star")
+                        }
+                    } label: {
+                        Label("Filters", systemImage: "line.3.horizontal.decrease.circle")
+                    }
+                }
+
+                // 9. Menu with Dynamic Items (ForEach)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("9. Menu with Dynamic Items (ForEach)")
+                        .font(.headline)
+                    Menu("Move to Folder") {
+                        ForEach(folders, id: \.self) { folder in
+                            Button(folder, action: { print("Move to \(folder)") })
+                        }
+                    }
+                }
+
+                // 10. Menu with Disabled Items
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("10. Menu with Disabled Items")
+                        .font(.headline)
+                    Menu("Export") {
+                        Button("PDF", action: {})
+                        Button("CSV", action: {})
+                        Button("XML", action: {})
+                            .disabled(true)
+                    }
+                }
+
+                // 11. Menu with Primary Action
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("11. Menu with Primary Action")
+                        .font(.headline)
+                    if #available(iOS 15.0, *) {
+                        Menu("Download") {
+                            Button("Pause", action: {})
+                            Button("Resume", action: {})
+                            Button(role: .destructive) { } label: { Label("Cancel", systemImage: "xmark.circle") }
+                        } primaryAction: {
+                            print("Start download")
+                        }
+                    } else {
+                        Text("Primary action requires iOS 15+")
+                            .foregroundColor(.secondary)
+                    }
+                }
+
+                // 12. Menu with Custom Label View (Avatar + Text)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("12. Menu with Custom Label View (Avatar + Text)")
+                        .font(.headline)
+                    Menu {
+                        Button("Profile", action: {})
+                        Button("Settings", action: {})
+                        Button("Sign Out", role: .destructive, action: {})
+                    } label: {
+                        HStack(spacing: 8) {
+                            Circle()
+                                .fill(Color.blue.opacity(0.25))
+                                .frame(width: 28, height: 28)
+                                .overlay(Image(systemName: "person.fill").imageScale(.small))
+                            Text("Account")
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 12)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(8)
+                        }
+                    }
+                }
+
+                // 13. Icons-Only Menu Label
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("13. Icons-Only Menu Label")
+                        .font(.headline)
+                    Menu {
+                        Button("Cut", systemImage: "scissors", action: {})
+                        Button("Copy", systemImage: "doc.on.doc", action: {})
+                        Button("Paste", systemImage: "doc.on.clipboard", action: {})
+                    } label: {
+                        Image(systemName: "ellipsis.circle.fill")
+                            .imageScale(.large)
+                            .padding(8)
+                            .background(Color.secondary.opacity(0.15))
+                            .clipShape(Circle())
                     }
                 }
             }
