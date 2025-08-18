@@ -513,6 +513,103 @@ fileprivate struct RippleEffectButton: View {
     }
 }
 
+// 11. GradientBorderButton
+fileprivate struct GradientBorderButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(LinearGradient(
+                            colors: [Color.pink, Color.orange, Color.purple],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ), lineWidth: 3)
+                )
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 12. ShimmerButton
+fileprivate struct ShimmerButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var shimmer = false
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .fontWeight(.bold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 14)
+                            .fill(Color.blue.opacity(0.2))
+                        RoundedRectangle(cornerRadius: 14)
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.white.opacity(0.4), Color.clear, Color.white.opacity(0.4)]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .rotationEffect(.degrees(30))
+                            .offset(x: shimmer ? 150 : -150)
+                    }
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .onAppear {
+                    withAnimation(Animation.linear(duration: 1.5).repeatForever(autoreverses: false)) {
+                        shimmer.toggle()
+                    }
+                }
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 13. IconOnlyButton
+fileprivate struct IconOnlyButton: View {
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 20, weight: .bold))
+                .padding()
+                .background(Circle().fill(Color.red.opacity(0.2)))
+                .foregroundColor(.red)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 14. SkewedButton
+fileprivate struct SkewedButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.purple.opacity(0.25))
+                        .rotationEffect(.degrees(3), anchor: .center)
+                )
+        }
+        .buttonStyle(.plain)
+    }
+}
+
 #Preview {
     NavigationStack {
         ButtonsLinks()
