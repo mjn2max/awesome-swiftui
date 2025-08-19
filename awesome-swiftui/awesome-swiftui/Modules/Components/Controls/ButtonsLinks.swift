@@ -60,6 +60,31 @@ struct ButtonsLinks: View {
                 RippleEffectButton(title: "Ripple", systemImage: "drop.fill") {
                     print("RippleEffectButton tapped")
                 }
+
+                GradientBorderButton(title: "Gradient Border") {
+                    print("GradientBorderButton tapped")
+                }
+                ShimmerButton(title: "Shimmer") {
+                    print("ShimmerButton tapped")
+                }
+                IconOnlyButton(systemImage: "heart.fill") {
+                    print("IconOnlyButton tapped")
+                }
+                SkewedButton(title: "Skewed") {
+                    print("SkewedButton tapped")
+                }
+                GradientFillButton(title: "Gradient Fill") {
+                    print("GradientFillButton tapped")
+                }
+                CircularProgressButton(title: "Download") {
+                    print("CircularProgressButton tapped")
+                }
+                BouncyButton(title: "Bouncy") {
+                    print("BouncyButton tapped")
+                }
+                FlipButton(title: "Flip") {
+                    print("FlipButton tapped")
+                }
             }
             .padding()
         }
