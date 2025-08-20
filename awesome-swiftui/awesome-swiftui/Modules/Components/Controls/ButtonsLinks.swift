@@ -641,3 +641,107 @@ fileprivate struct SkewedButton: View {
     }
     .frame(height: 600)
 }
+
+// 15. GradientFillButton
+fileprivate struct GradientFillButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    LinearGradient(colors: [.pink, .purple, .blue], startPoint: .leading, endPoint: .trailing)
+                        .cornerRadius(12)
+                )
+                .foregroundColor(.white)
+                .shadow(radius: 4)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 16. CircularProgressButton
+fileprivate struct CircularProgressButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var progress = 0.0
+    var body: some View {
+        Button(action: {
+            action()
+            withAnimation(.linear(duration: 1.5)) {
+                progress = progress >= 1.0 ? 0.0 : 1.0
+            }
+        }) {
+            ZStack {
+                Circle()
+                    .stroke(Color.gray.opacity(0.3), lineWidth: 6)
+                    .frame(width: 50, height: 50)
+                Circle()
+                    .trim(from: 0, to: progress)
+                    .stroke(Color.blue, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                    .frame(width: 50, height: 50)
+                    .rotationEffect(.degrees(-90))
+                    .animation(.linear(duration: 1.5), value: progress)
+                Image(systemName: "arrow.down.circle.fill")
+                    .font(.system(size: 24))
+                    .foregroundColor(.blue)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 17. BouncyButton
+fileprivate struct BouncyButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var bounce = false
+    var body: some View {
+        Button(action: {
+            withAnimation(.interpolatingSpring(stiffness: 170, damping: 5)) {
+                bounce.toggle()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                bounce.toggle()
+            }
+            action()
+        }) {
+            Text(title)
+                .fontWeight(.bold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 30)
+                .background(Capsule().fill(Color.orange.opacity(0.2)))
+                .scaleEffect(bounce ? 1.2 : 1.0)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 18. FlipButton
+fileprivate struct FlipButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var flipped = false
+    var body: some View {
+        Button(action: {
+            withAnimation(.easeInOut(duration: 0.6)) {
+                flipped.toggle()
+            }
+            action()
+        }) {
+            Text(title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.teal.opacity(0.25))
+                )
+                .rotation3DEffect(.degrees(flipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+        }
+        .buttonStyle(.plain)
+    }
+}
