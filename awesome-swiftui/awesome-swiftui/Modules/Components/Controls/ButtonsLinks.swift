@@ -12,9 +12,14 @@
 import SwiftUI
 
 struct ButtonsLinks: View {
+    // Adaptive grid with a reasonable minimum so buttons fit well on iPhone/iPad/Mac
+    private let columns: [GridItem] = [
+        GridItem(.adaptive(minimum: 180), spacing: 16)
+    ]
+
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 20) {
+            LazyVGrid(columns: columns, spacing: 16) {
                 PrimaryGradientButton(title: "Get Started") {
                     print("PrimaryGradientButton tapped")
                 }
@@ -60,7 +65,6 @@ struct ButtonsLinks: View {
                 RippleEffectButton(title: "Ripple", systemImage: "drop.fill") {
                     print("RippleEffectButton tapped")
                 }
-
                 GradientBorderButton(title: "Gradient Border") {
                     print("GradientBorderButton tapped")
                 }
@@ -86,7 +90,7 @@ struct ButtonsLinks: View {
                     print("FlipButton tapped")
                 }
             }
-            .padding()
+            .padding(16)
         }
     }
 }
