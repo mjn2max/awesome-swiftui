@@ -89,6 +89,15 @@ struct ButtonsLinks: View {
                 FlipButton(title: "Flip") {
                     print("FlipButton tapped")
                 }
+                GradientCircleButton(title: "Circle Gradient", systemImage: "star") {
+                    print("GradientCircleButton tapped")
+                }
+                BlurredBackgroundButton(title: "Blurred", systemImage: "drop") {
+                    print("BlurredBackgroundButton tapped")
+                }
+                HoverScaleButton(title: "Hover Scale") {
+                    print("HoverScaleButton tapped")
+                }
             }
             .padding(16)
         }
@@ -747,5 +756,74 @@ fileprivate struct FlipButton: View {
                 .rotation3DEffect(.degrees(flipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
         }
         .buttonStyle(.plain)
+    }
+}
+
+// 19. GradientCircleButton
+fileprivate struct GradientCircleButton: View {
+    var title: String
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 24, weight: .bold))
+                    .padding()
+                    .background(
+                        Circle().fill(
+                            LinearGradient(colors: [.pink, .purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        )
+                    )
+                    .foregroundColor(.white)
+                Text(title)
+                    .font(.footnote)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 20. BlurredBackgroundButton
+fileprivate struct BlurredBackgroundButton: View {
+    var title: String
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(.ultraThinMaterial)
+            )
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 21. HoverScaleButton
+fileprivate struct HoverScaleButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var hovering = false
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(Capsule().fill(Color.blue.opacity(0.2)))
+                .scaleEffect(hovering ? 1.1 : 1.0)
+        }
+        .buttonStyle(.plain)
+        .onHover { isHovering in
+            withAnimation(.easeInOut(duration: 0.2)) {
+                hovering = isHovering
+            }
+        }
     }
 }
