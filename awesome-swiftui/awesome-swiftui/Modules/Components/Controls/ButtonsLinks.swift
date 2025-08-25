@@ -98,6 +98,15 @@ struct ButtonsLinks: View {
                 HoverScaleButton(title: "Hover Scale") {
                     print("HoverScaleButton tapped")
                 }
+                PulseButton(title: "Pulse", systemImage: "waveform.path") {
+                    print("PulseButton tapped")
+                }
+                RotatingGradientButton(title: "Rotating Gradient") {
+                    print("RotatingGradientButton tapped")
+                }
+                ShakeButton(title: "Shake") {
+                    print("ShakeButton tapped")
+                }
             }
             .padding(16)
         }
@@ -825,5 +834,83 @@ fileprivate struct HoverScaleButton: View {
                 hovering = isHovering
             }
         }
+    }
+}
+
+// 22. PulseButton
+fileprivate struct PulseButton: View {
+    var title: String
+    var systemImage: String
+    var action: () -> Void
+    @State private var animate = false
+    var body: some View {
+        Button(action: {
+            animate.toggle()
+            action()
+        }) {
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                    .scaleEffect(animate ? 1.2 : 1.0)
+                    .animation(.easeInOut(duration: 0.4).repeatCount(1, autoreverses: true), value: animate)
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 24)
+            .background(Capsule().fill(Color.pink.opacity(0.2)))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 23. RotatingGradientButton
+fileprivate struct RotatingGradientButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var rotate = false
+    var body: some View {
+        Button(action: {
+            withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
+                rotate.toggle()
+            }
+            action()
+        }) {
+            Text(title)
+                .fontWeight(.bold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(
+                    AngularGradient(gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple, .red]), center: .center)
+                        .rotationEffect(.degrees(rotate ? 360 : 0))
+                        .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: rotate)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                )
+                .foregroundColor(.white)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 24. ShakeButton
+fileprivate struct ShakeButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var offset: CGFloat = 0
+    var body: some View {
+        Button(action: {
+            withAnimation(Animation.linear(duration: 0.1).repeatCount(5, autoreverses: true)) {
+                offset = 10
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                offset = 0
+            }
+            action()
+        }) {
+            Text(title)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 28)
+                .background(RoundedRectangle(cornerRadius: 12).fill(Color.red.opacity(0.2)))
+                .offset(x: offset)
+        }
+        .buttonStyle(.plain)
     }
 }
