@@ -107,6 +107,20 @@ struct ButtonsLinks: View {
                 ShakeButton(title: "Shake") {
                     print("ShakeButton tapped")
                 }
+                FavoriteToggleButton(title: "Favorite") {
+                    print("FavoriteToggleButton tapped")
+                }
+                LoadingButton(title: "Loading Action") {
+                    print("LoadingButton fired")
+                }
+                LinkCapsule(title: "mjn2max.com", url: URL(string: "https://mjn2max.com")!)
+                NavigationLinkTile(title: "Go to Details")
+                ContextMenuActionButton(title: "More…") {
+                    print("Context menu base tapped")
+                }
+                DestructiveButton(title: "Delete") {
+                    print("DestructiveButton tapped")
+                }
             }
             .padding(16)
         }
@@ -910,6 +924,138 @@ fileprivate struct ShakeButton: View {
                 .padding(.horizontal, 28)
                 .background(RoundedRectangle(cornerRadius: 12).fill(Color.red.opacity(0.2)))
                 .offset(x: offset)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 25. FavoriteToggleButton
+fileprivate struct FavoriteToggleButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var isFav = false
+    var body: some View {
+        Button(action: {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                isFav.toggle()
+            }
+            action()
+        }) {
+            HStack(spacing: 8) {
+                Image(systemName: isFav ? "heart.fill" : "heart")
+                    .foregroundStyle(isFav ? Color.red : Color.secondary)
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
+            .background(Capsule().fill((isFav ? Color.red.opacity(0.15) : Color.gray.opacity(0.15))))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text(isFav ? "Remove Favorite" : "Mark Favorite"))
+    }
+}
+
+// 26. LoadingButton
+fileprivate struct LoadingButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var isLoading = false
+    var body: some View {
+        Button(action: {
+            guard !isLoading else { return }
+            isLoading = true
+            action()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                withAnimation { isLoading = false }
+            }
+        }) {
+            HStack(spacing: 10) {
+                if isLoading { ProgressView().scaleEffect(0.9) }
+                Text(isLoading ? "Working…" : title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 24)
+            .background(Capsule().fill(Color.gray.opacity(0.15)))
+        }
+        .buttonStyle(.plain)
+        .disabled(isLoading)
+    }
+}
+
+// 27. LinkCapsule
+fileprivate struct LinkCapsule: View {
+    var title: String
+    var url: URL
+    var body: some View {
+        Link(destination: url) {
+            HStack(spacing: 8) {
+                Image(systemName: "link")
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
+            .background(Capsule().stroke(Color.blue, lineWidth: 1.5))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 28. NavigationLinkTile
+fileprivate struct NavigationLinkTile: View {
+    var title: String
+    var body: some View {
+        NavigationLink(destination: Text("Details View").padding().navigationTitle("Details")) {
+            VStack(spacing: 8) {
+                Image(systemName: "arrow.right.circle.fill").font(.system(size: 24))
+                Text(title).font(.footnote)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(RoundedRectangle(cornerRadius: 12).fill(Color.blue.opacity(0.12)))
+        }
+    }
+}
+
+// 29. ContextMenuActionButton
+fileprivate struct ContextMenuActionButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var selected: String? = nil
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: "ellipsis.circle")
+                Text(selected ?? title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 20)
+            .background(RoundedRectangle(cornerRadius: 12).fill(Color.gray.opacity(0.12)))
+        }
+        .buttonStyle(.plain)
+        .contextMenu {
+            Button("Duplicate", systemImage: "plus.square.on.square") { selected = "Duplicated" }
+            Button("Archive", systemImage: "archivebox") { selected = "Archived" }
+            Button(role: .destructive) { selected = "Deleted" } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
+    }
+}
+
+// 30. DestructiveButton
+fileprivate struct DestructiveButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(role: .destructive, action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: "trash")
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 22)
+            .background(Capsule().fill(Color.red.opacity(0.15)))
+            .foregroundColor(.red)
         }
         .buttonStyle(.plain)
     }
