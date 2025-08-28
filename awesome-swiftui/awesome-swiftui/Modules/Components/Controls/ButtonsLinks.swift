@@ -121,6 +121,13 @@ struct ButtonsLinks: View {
                 DestructiveButton(title: "Delete") {
                     print("DestructiveButton tapped")
                 }
+                GradientIconLink(title: "GitHub", url: URL(string: "https://github.com/mjn2max")!, systemImage: "chevron.left.slash.chevron.right")
+                SocialShareButton(title: "Share") {
+                    print("SocialShareButton tapped")
+                }
+                ToggleStyleButton(title: "Toggle Style") {
+                    print("ToggleStyleButton tapped")
+                }
             }
             .padding(16)
         }
@@ -1056,6 +1063,64 @@ fileprivate struct DestructiveButton: View {
             .padding(.horizontal, 22)
             .background(Capsule().fill(Color.red.opacity(0.15)))
             .foregroundColor(.red)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 31. GradientIconLink
+fileprivate struct GradientIconLink: View {
+    var title: String
+    var url: URL
+    var systemImage: String
+    var body: some View {
+        Link(destination: url) {
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                    .foregroundStyle(LinearGradient(colors: [.purple, .pink], startPoint: .topLeading, endPoint: .bottomTrailing))
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 22)
+            .background(RoundedRectangle(cornerRadius: 12).stroke(LinearGradient(colors: [.purple, .pink], startPoint: .leading, endPoint: .trailing), lineWidth: 2))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 32. SocialShareButton
+fileprivate struct SocialShareButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: "square.and.arrow.up")
+                Text(title)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 22)
+            .background(Capsule().fill(Color.blue.opacity(0.15)))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 33. ToggleStyleButton
+fileprivate struct ToggleStyleButton: View {
+    var title: String
+    var action: () -> Void
+    @State private var toggled = false
+    var body: some View {
+        Button(action: {
+            toggled.toggle()
+            action()
+        }) {
+            Text(title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 24)
+                .background(RoundedRectangle(cornerRadius: 12).fill(toggled ? Color.green.opacity(0.3) : Color.gray.opacity(0.2)))
         }
         .buttonStyle(.plain)
     }
