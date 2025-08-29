@@ -230,6 +230,49 @@ struct Menus: View {
                             .clipShape(Circle())
                     }
                 }
+
+                // 14. Menu with Mixed Roles
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("14. Menu with Mixed Roles")
+                        .font(.headline)
+                    Menu("File Options") {
+                        Button("Open", systemImage: "folder", action: {})
+                        Button("Save", systemImage: "square.and.arrow.down", action: {})
+                        Button(role: .destructive) {
+                        } label: {
+                            Label("Delete File", systemImage: "trash")
+                        }
+                    }
+                }
+
+                // 15. Menu inside Toolbar-like HStack
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("15. Menu inside Toolbar-like HStack")
+                        .font(.headline)
+                    HStack {
+                        Button("Add", systemImage: "plus", action: {})
+                        Spacer()
+                        Menu {
+                            Button("Option A", action: {})
+                            Button("Option B", action: {})
+                        } label: {
+                            Label("More", systemImage: "ellipsis.circle")
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+
+                // 16. Menu with Emoji Items
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("16. Menu with Emoji Items")
+                        .font(.headline)
+                    Menu("Choose Emoji") {
+                        Button("😀 Smile", action: {})
+                        Button("🔥 Fire", action: {})
+                        Button("🌙 Moon", action: {})
+                        Button("🍎 Apple", action: {})
+                    }
+                }
             }
             .padding()
         }
