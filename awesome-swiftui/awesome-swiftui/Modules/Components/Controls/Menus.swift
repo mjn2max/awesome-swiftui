@@ -17,10 +17,14 @@ struct Menus: View {
     @State private var showStarred = false
     private let colorOptions = ["Red", "Green", "Blue", "Purple"]
     private let folders = ["Home", "Work", "Travel", "Personal"]
+    // Adaptive grid for a card-like menu gallery
+    private let columns: [GridItem] = [
+        GridItem(.adaptive(minimum: 260), spacing: 16)
+    ]
 
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 20) {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                 // 1. Basic text menu
                 VStack(alignment: .leading, spacing: 8) {
                     Text("1. Basic Text Menu")
@@ -274,7 +278,7 @@ struct Menus: View {
                     }
                 }
             }
-            .padding()
+            .padding(16)
         }
     }
 }
