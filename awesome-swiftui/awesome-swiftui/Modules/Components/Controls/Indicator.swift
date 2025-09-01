@@ -12,61 +12,81 @@
 import SwiftUI
 
 struct Indicator: View {
+    private let columns = [GridItem(.adaptive(minimum: 140), spacing: 16, alignment: .top)]
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 20) {
-                Group {
-                    Text("Default ProgressView (Indeterminate)")
-                        .font(.headline)
+            LazyVGrid(columns: columns, spacing: 16) {
+                ItemCard(title: "Default ProgressView (Indeterminate)") {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
                         .frame(width: 40, height: 40)
                 }
-                Group {
-                    Text("Circular Spinning Custom Shape")
-                        .font(.headline)
+
+                ItemCard(title: "Circular Spinning Custom Shape") {
                     SpinningCircleIndicator()
                         .frame(width: 40, height: 40)
                 }
-                Group {
-                    Text("Pulsing Dots Animation")
-                        .font(.headline)
+
+                ItemCard(title: "Pulsing Dots Animation") {
                     PulsingDotsIndicator()
                         .frame(width: 60, height: 20)
                 }
-                Group {
-                    Text("Bar Progress Animation")
-                        .font(.headline)
+
+                ItemCard(title: "Bar Progress Animation") {
                     BarProgressIndicator()
                         .frame(width: 80, height: 8)
                 }
-                Group {
-                    Text("Rotating Line Segments Indicator")
-                        .font(.headline)
+
+                ItemCard(title: "Rotating Line Segments Indicator") {
                     RotatingSegmentsIndicator()
                         .frame(width: 40, height: 40)
                 }
-                Group {
-                    Text("Scaling Circle Wave Indicator")
-                        .font(.headline)
+
+                ItemCard(title: "Scaling Circle Wave Indicator") {
                     ScalingWaveIndicator()
                         .frame(width: 50, height: 50)
                 }
-                Group {
-                    Text("Gradient Ring Rotation")
-                        .font(.headline)
+
+                ItemCard(title: "Gradient Ring Rotation") {
                     GradientRingIndicator()
                         .frame(width: 44, height: 44)
                 }
-                Group {
-                    Text("Bouncing Dots Indicator")
-                        .font(.headline)
+
+                ItemCard(title: "Bouncing Dots Indicator") {
                     BouncingDotsIndicator()
                         .frame(width: 60, height: 20)
                 }
             }
             .padding()
         }
+    }
+}
+
+// MARK: - Grid Card
+
+private struct ItemCard<Content: View>: View {
+    let title: String
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(title)
+                .font(.headline)
+                .multilineTextAlignment(.center)
+            content
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .top)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.secondary.opacity(0.08))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.secondary.opacity(0.12))
+        )
     }
 }
 
