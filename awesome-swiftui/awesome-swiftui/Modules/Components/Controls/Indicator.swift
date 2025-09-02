@@ -4,7 +4,7 @@
 //
 // Created by Huy D. on 8/9/25
 // mjn2max.github.io 😜
-// 
+//
 // Copyright © 2025. All rights reserved.
 // mjn2max.com
 //
@@ -67,18 +67,27 @@ struct Indicator: View {
 private struct ItemCard<Content: View>: View {
     let title: String
     @ViewBuilder let content: Content
+    private let cardHeight: CGFloat = 160
 
     var body: some View {
         VStack(spacing: 8) {
             Text(title)
                 .font(.headline)
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
+
+            Spacer(minLength: 0)
+
             content
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
+
+            Spacer(minLength: 0)
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .top)
+        .frame(height: cardHeight)
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.secondary.opacity(0.08))
@@ -87,6 +96,7 @@ private struct ItemCard<Content: View>: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.secondary.opacity(0.12))
         )
+        .contentShape(Rectangle())
     }
 }
 
