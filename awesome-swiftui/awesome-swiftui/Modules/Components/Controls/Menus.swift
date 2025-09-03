@@ -12,34 +12,64 @@
 import SwiftUI
 
 struct Menus: View {
-    // Adaptive grid for a card-like menu gallery
-    private let columns: [GridItem] = [
-        GridItem(.adaptive(minimum: 260), spacing: 16)
-    ]
+    @Environment(\.horizontalSizeClass) private var hSizeClass
+    private var columns: [GridItem] {
+        [ GridItem(.adaptive(minimum: hSizeClass == .compact ? 180 : 240), spacing: 20) ]
+    }
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
-                BasicTextMenuCard()
-                LabelMenuCard()
-                MultiSectionMenuCard()
-                DestructiveMenuCard()
-                NestedMenuCard()
-                StyledLabelMenuCard()
-                CheckmarkSelectionMenuCard()
-                ToggleFiltersMenuCard()
-                DynamicItemsMenuCard()
-                DisabledItemsMenuCard()
-                PrimaryActionMenuCard()
-                CustomLabelMenuCard()
-                IconsOnlyMenuCard()
-                MixedRolesMenuCard()
-                ToolbarMenuCard()
-                EmojiMenuCard()
+            LazyVGrid(columns: columns, alignment: .center, spacing: 20) {
+                BasicTextMenuCard().menuCard()
+                LabelMenuCard().menuCard()
+                MultiSectionMenuCard().menuCard()
+                DestructiveMenuCard().menuCard()
+                NestedMenuCard().menuCard()
+                StyledLabelMenuCard().menuCard()
+                CheckmarkSelectionMenuCard().menuCard()
+                ToggleFiltersMenuCard().menuCard()
+                DynamicItemsMenuCard().menuCard()
+                DisabledItemsMenuCard().menuCard()
+                PrimaryActionMenuCard().menuCard()
+                CustomLabelMenuCard().menuCard()
+                IconsOnlyMenuCard().menuCard()
+                MixedRolesMenuCard().menuCard()
+                ToolbarMenuCard().menuCard()
+                EmojiMenuCard().menuCard()
             }
-            .padding(16)
+            .padding(20)
+            .frame(maxWidth: 1100)
+            .frame(maxWidth: .infinity)
         }
     }
+}
+
+// MARK: - Shared Card Chrome (matches Indicator style)
+fileprivate struct MenuCardChrome: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(12)
+            .frame(minHeight: 180, maxHeight: 180, alignment: .topLeading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(.ultraThinMaterial)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+            )
+            .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            #if os(iOS)
+            .hoverEffect(.highlight)
+            #endif
+            .shadow(color: Color.black.opacity(0.06), radius: 10, x: 0, y: 4)
+    }
+}
+
+fileprivate extension View {
+    /// Apply the shared menu card appearance used across the gallery.
+    func menuCard() -> some View { modifier(MenuCardChrome()) }
 }
 
 // MARK: - Cards (split from Menus)
