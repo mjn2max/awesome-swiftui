@@ -13,29 +13,45 @@ import SwiftUI
 
 struct Menus: View {
     @Environment(\.horizontalSizeClass) private var hSizeClass
+    @Environment(\.dynamicTypeSize) private var dynamicType
+
+    // Responsive tile width tuned for size class & Dynamic Type
+    private var tileMinWidth: CGFloat {
+        let base: CGFloat = (hSizeClass == .compact) ? 180 : 240
+        switch dynamicType {
+        case .xSmall, .small, .medium:
+            return base
+        case .large, .xLarge:
+            return base + 12
+        default:
+            return base + 24
+        }
+    }
+
+    // Adaptive grid using the responsive min width
     private var columns: [GridItem] {
-        [ GridItem(.adaptive(minimum: hSizeClass == .compact ? 180 : 240), spacing: 20) ]
+        [ GridItem(.adaptive(minimum: tileMinWidth), spacing: 20, alignment: .top) ]
     }
 
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, alignment: .center, spacing: 20) {
-                BasicTextMenuCard().menuCard()
-                LabelMenuCard().menuCard()
-                MultiSectionMenuCard().menuCard()
-                DestructiveMenuCard().menuCard()
-                NestedMenuCard().menuCard()
-                StyledLabelMenuCard().menuCard()
-                CheckmarkSelectionMenuCard().menuCard()
-                ToggleFiltersMenuCard().menuCard()
-                DynamicItemsMenuCard().menuCard()
-                DisabledItemsMenuCard().menuCard()
-                PrimaryActionMenuCard().menuCard()
-                CustomLabelMenuCard().menuCard()
-                IconsOnlyMenuCard().menuCard()
-                MixedRolesMenuCard().menuCard()
-                ToolbarMenuCard().menuCard()
-                EmojiMenuCard().menuCard()
+                ItemCard { BasicTextMenuCard() }
+                ItemCard { LabelMenuCard() }
+                ItemCard { MultiSectionMenuCard() }
+                ItemCard { DestructiveMenuCard() }
+                ItemCard { NestedMenuCard() }
+                ItemCard { StyledLabelMenuCard() }
+                ItemCard { CheckmarkSelectionMenuCard() }
+                ItemCard { ToggleFiltersMenuCard() }
+                ItemCard { DynamicItemsMenuCard() }
+                ItemCard { DisabledItemsMenuCard() }
+                ItemCard { PrimaryActionMenuCard() }
+                ItemCard { CustomLabelMenuCard() }
+                ItemCard { IconsOnlyMenuCard() }
+                ItemCard { MixedRolesMenuCard() }
+                ItemCard { ToolbarMenuCard() }
+                ItemCard { EmojiMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -44,32 +60,38 @@ struct Menus: View {
     }
 }
 
-// MARK: - Shared Card Chrome (matches Indicator style)
-fileprivate struct MenuCardChrome: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding(12)
-            .frame(minHeight: 180, maxHeight: 180, alignment: .topLeading)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(.ultraThinMaterial)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(Color.primary.opacity(0.06), lineWidth: 1)
-            )
-            .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-            #if os(iOS)
-            .hoverEffect(.highlight)
-            #endif
-            .shadow(color: Color.black.opacity(0.06), radius: 10, x: 0, y: 4)
-    }
-}
+// MARK: - Reusable ItemCard (mirrors Indicator-style container)
+fileprivate struct ItemCard<Content: View>: View {
+    private let content: Content
+    private let cardHeight: CGFloat
 
-fileprivate extension View {
-    /// Apply the shared menu card appearance used across the gallery.
-    func menuCard() -> some View { modifier(MenuCardChrome()) }
+    init(height: CGFloat = 180, @ViewBuilder content: () -> Content) {
+        self.content = content()
+        self.cardHeight = height
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            content
+        }
+        .padding(12)
+        .frame(minWidth: 160, maxWidth: .infinity, alignment: .top)
+        .frame(height: cardHeight)
+        .frame(minHeight: cardHeight, maxHeight: cardHeight)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(.ultraThinMaterial)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+        )
+        .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        #if os(iOS)
+        .hoverEffect(.highlight)
+        #endif
+        .shadow(color: Color.black.opacity(0.06), radius: 10, x: 0, y: 4)
+    }
 }
 
 // MARK: - Cards (split from Menus)
