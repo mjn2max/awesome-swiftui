@@ -52,6 +52,9 @@ struct Menus: View {
                 ItemCard(title: "14. Menu with Mixed Roles") { MixedRolesMenuCard() }
                 ItemCard(title: "15. Menu inside Toolbar-like HStack") { ToolbarMenuCard() }
                 ItemCard(title: "16. Menu with Emoji Items") { EmojiMenuCard() }
+                ItemCard(title: "17. Menu with Icons and Titles") { IconTitleMenuCard() }
+                ItemCard(title: "18. Contextual Menu") { ContextualMenuCard() }
+                ItemCard(title: "19. Menu with Sliders") { SliderMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -315,6 +318,53 @@ fileprivate struct EmojiMenuCard: View {
             Button("🔥 Fire", action: {})
             Button("🌙 Moon", action: {})
             Button("🍎 Apple", action: {})
+        }
+    }
+}
+
+fileprivate struct IconTitleMenuCard: View {
+    var body: some View {
+        Menu("Settings") {
+            Button {
+                print("Wi-Fi tapped")
+            } label: {
+                Label("Wi-Fi", systemImage: "wifi")
+            }
+            Button {
+                print("Bluetooth tapped")
+            } label: {
+                Label("Bluetooth", systemImage: "bolt.horizontal")
+            }
+            Button {
+                print("Airplane Mode tapped")
+            } label: {
+                Label("Airplane Mode", systemImage: "airplane")
+            }
+        }
+    }
+}
+
+fileprivate struct ContextualMenuCard: View {
+    var body: some View {
+        Menu("Actions") {
+            Button("Refresh", systemImage: "arrow.clockwise", action: {})
+            Button("Print", systemImage: "printer", action: {})
+            Button("Export PDF", systemImage: "doc.richtext", action: {})
+        }
+        .menuStyle(.button)
+    }
+}
+
+fileprivate struct SliderMenuCard: View {
+    @State private var value: Double = 0.5
+    var body: some View {
+        Menu("Adjust Value") {
+            VStack {
+                Text("Value: \(value, specifier: "%.2f")")
+                Slider(value: $value)
+                    .frame(width: 150)
+            }
+            .padding()
         }
     }
 }
