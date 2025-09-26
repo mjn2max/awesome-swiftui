@@ -128,6 +128,9 @@ struct ButtonsLinks: View {
                 ToggleStyleButton(title: "Toggle Style") {
                     print("ToggleStyleButton tapped")
                 }
+                BadgeButton(title: "Inbox", systemImage: "tray.full", count: 12) {
+                    print("BadgeButton tapped")
+                }
             }
             .padding(16)
         }
@@ -1123,5 +1126,33 @@ fileprivate struct ToggleStyleButton: View {
                 .background(RoundedRectangle(cornerRadius: 12).fill(toggled ? Color.green.opacity(0.3) : Color.gray.opacity(0.2)))
         }
         .buttonStyle(.plain)
+    }
+}
+
+// 34. BadgeButton
+fileprivate struct BadgeButton: View {
+    var title: String
+    var systemImage: String
+    var count: Int
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 10) {
+                Image(systemName: systemImage)
+                Text(title)
+                Spacer(minLength: 8)
+                Text("\(count)")
+                    .font(.caption).bold()
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .background(Capsule().fill(Color.red))
+                    .foregroundColor(.white)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 14)
+            .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text("\(title), \(count) new"))
     }
 }
