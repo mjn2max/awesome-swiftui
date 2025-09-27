@@ -131,6 +131,9 @@ struct ButtonsLinks: View {
                 BadgeButton(title: "Inbox", systemImage: "tray.full", count: 12) {
                     print("BadgeButton tapped")
                 }
+                SegmentedControlButton(options: ["Day", "Week", "Month"]) { selection in
+                    print("SegmentedControlButton selected: \(selection)")
+                }
             }
             .padding(16)
         }
@@ -1154,5 +1157,42 @@ fileprivate struct BadgeButton: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text("\(title), \(count) new"))
+    }
+}
+
+// 35. SegmentedControlButton
+fileprivate struct SegmentedControlButton: View {
+    var options: [String]
+    var onSelect: (String) -> Void
+    @State private var selected: String
+    init(options: [String], onSelect: @escaping (String) -> Void) {
+        self.options = options
+        self.onSelect = onSelect
+        _selected = State(initialValue: options.first ?? "")
+    }
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(options, id: \.self) { opt in
+                Button(action: {
+                    selected = opt
+                    onSelect(opt)
+                }) {
+                    Text(opt)
+                        .font(.subheadline).bold()
+                        .padding(.vertical, 8)
+                        .frame(minWidth: 64)
+                        .background(selected == opt ? Color.accentColor : Color.clear)
+                        .foregroundColor(selected == opt ? .white : .accentColor)
+                }
+                .buttonStyle(.plain)
+                if opt != options.last { Divider().frame(height: 24) }
+            }
+        }
+        .padding(4)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.accentColor, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(Color.accentColor.opacity(0.08)))
+        )
     }
 }
