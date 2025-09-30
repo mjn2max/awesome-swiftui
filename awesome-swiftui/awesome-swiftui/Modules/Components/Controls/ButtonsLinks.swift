@@ -134,6 +134,9 @@ struct ButtonsLinks: View {
                 SegmentedControlButton(options: ["Day", "Week", "Month"]) { selection in
                     print("SegmentedControlButton selected: \(selection)")
                 }
+                HapticConfirmButton(title: "Confirm") {
+                    print("HapticConfirmButton tapped")
+                }
             }
             .padding(16)
         }
@@ -1194,5 +1197,27 @@ fileprivate struct SegmentedControlButton: View {
                 .stroke(Color.accentColor, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(Color.accentColor.opacity(0.08)))
         )
+    }
+}
+
+// 36. HapticConfirmButton
+fileprivate struct HapticConfirmButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: {
+            #if canImport(UIKit)
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            #endif
+            action()
+        }) {
+            Label(title, systemImage: "checkmark.circle.fill")
+                .padding(.vertical, 10)
+                .padding(.horizontal, 18)
+                .background(Capsule().fill(Color.green.opacity(0.18)))
+                .foregroundColor(.green)
+        }
+        .buttonStyle(.plain)
     }
 }
