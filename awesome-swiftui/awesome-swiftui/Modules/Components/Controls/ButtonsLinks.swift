@@ -137,6 +137,13 @@ struct ButtonsLinks: View {
                 HapticConfirmButton(title: "Confirm") {
                     print("HapticConfirmButton tapped")
                 }
+                AsyncActionButton(title: "Sync Data") {
+                    try? await Task.sleep(nanoseconds: 900_000_000)
+                    print("AsyncActionButton completed")
+                }
+                GradientStrokeIconButton(title: "Share", systemImage: "square.and.arrow.up") {
+                    print("GradientStrokeIconButton tapped")
+                }
             }
             .padding(16)
         }
@@ -1217,6 +1224,57 @@ fileprivate struct HapticConfirmButton: View {
                 .padding(.horizontal, 18)
                 .background(Capsule().fill(Color.green.opacity(0.18)))
                 .foregroundColor(.green)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 37. AsyncActionButton
+fileprivate struct AsyncActionButton: View {
+    var title: String
+    var task: () async -> Void
+    @State private var isLoading = false
+    var body: some View {
+        Button(action: {
+            guard !isLoading else { return }
+            isLoading = true
+            Task {
+                await task()
+                withAnimation { isLoading = false }
+            }
+        }) {
+            HStack(spacing: 8) {
+                if isLoading { ProgressView() }
+                Text(isLoading ? "Syncing…" : title)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 18)
+            .background(Capsule().fill(Color.blue.opacity(0.14)))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// 38. GradientStrokeIconButton
+fileprivate struct GradientStrokeIconButton: View {
+    var title: String
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 10) {
+                Image(systemName: systemImage)
+                Text(title).fontWeight(.semibold)
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 22)
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .stroke(LinearGradient(colors: [.pink, .purple, .blue],
+                                           startPoint: .leading,
+                                           endPoint: .trailing),
+                            lineWidth: 2)
+            )
         }
         .buttonStyle(.plain)
     }
