@@ -144,6 +144,9 @@ struct ButtonsLinks: View {
                 GradientStrokeIconButton(title: "Share", systemImage: "square.and.arrow.up") {
                     print("GradientStrokeIconButton tapped")
                 }
+                ThreeDPressButton(title: "3D Press") {
+                    print("ThreeDPressButton tapped")
+                }
             }
             .padding(16)
         }
@@ -1276,6 +1279,39 @@ fileprivate struct GradientStrokeIconButton: View {
                             lineWidth: 2)
             )
         }
+        .buttonStyle(.plain)
+    }
+}
+
+// 39. ThreeDPressButton
+fileprivate struct ThreeDPressButton: View {
+    var title: String
+    var action: () -> Void
+    @GestureState private var isPressed = false
+    var body: some View {
+        let press = LongPressGesture(minimumDuration: 0.02)
+            .updating($isPressed) { value, state, _ in
+                state = value
+            }
+        return Button(action: action) {
+            Text(title)
+                .fontWeight(.bold)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 26)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemGray6))
+                            .shadow(color: .black.opacity(0.25),
+                                    radius: isPressed ? 2 : 8,
+                                    x: 0, y: isPressed ? 1 : 6)
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.black.opacity(0.08), lineWidth: 1)
+                    }
+                )
+                .scaleEffect(isPressed ? 0.98 : 1)
+        }
+        .simultaneousGesture(press)
         .buttonStyle(.plain)
     }
 }
