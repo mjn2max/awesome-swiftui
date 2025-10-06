@@ -55,6 +55,7 @@ struct Menus: View {
                 ItemCard(title: "17. Menu with Icons and Titles") { IconTitleMenuCard() }
                 ItemCard(title: "18. Contextual Menu") { ContextualMenuCard() }
                 ItemCard(title: "19. Menu with Sliders") { SliderMenuCard() }
+                ItemCard(title: "20. Picker-backed Menu (Selection)") { PickerMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -369,6 +370,19 @@ fileprivate struct SliderMenuCard: View {
     }
 }
 
+fileprivate struct PickerMenuCard: View {
+    @State private var selection: String = "Day"
+    private let options = ["Day", "Week", "Month", "Year"]
+    var body: some View {
+        Menu {
+            Picker("Range", selection: $selection) {
+                ForEach(options, id: \.self) { Text($0) }
+            }
+        } label: {
+            Label("Selected: \(selection)", systemImage: "calendar")
+        }
+    }
+}
 #Preview {
     NavigationStack {
         Menus()
