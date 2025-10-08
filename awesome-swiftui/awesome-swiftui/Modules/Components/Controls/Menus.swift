@@ -56,6 +56,7 @@ struct Menus: View {
                 ItemCard(title: "18. Contextual Menu") { ContextualMenuCard() }
                 ItemCard(title: "19. Menu with Sliders") { SliderMenuCard() }
                 ItemCard(title: "20. Picker-backed Menu (Selection)") { PickerMenuCard() }
+                ItemCard(title: "21. Menu with Danger & General Sections") { DangerSectionsMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -380,6 +381,21 @@ fileprivate struct PickerMenuCard: View {
             }
         } label: {
             Label("Selected: \(selection)", systemImage: "calendar")
+        }
+    }
+}
+
+fileprivate struct DangerSectionsMenuCard: View {
+    var body: some View {
+        Menu("Manage") {
+            Section("General") {
+                Button("Rename", systemImage: "pencil", action: {})
+                Button("Duplicate", systemImage: "plus.square.on.square", action: {})
+            }
+            Section("Danger") {
+                Button(role: .destructive) { } label: { Label("Delete", systemImage: "trash") }
+                Button(role: .destructive) { } label: { Label("Permanently Erase", systemImage: "trash.slash") }
+            }
         }
     }
 }
