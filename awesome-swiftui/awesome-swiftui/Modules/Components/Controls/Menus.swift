@@ -57,6 +57,7 @@ struct Menus: View {
                 ItemCard(title: "19. Menu with Sliders") { SliderMenuCard() }
                 ItemCard(title: "20. Picker-backed Menu (Selection)") { PickerMenuCard() }
                 ItemCard(title: "21. Menu with Danger & General Sections") { DangerSectionsMenuCard() }
+                ItemCard(title: "22. Menu with Color Swatches") { ColorSwatchMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -396,6 +397,28 @@ fileprivate struct DangerSectionsMenuCard: View {
                 Button(role: .destructive) { } label: { Label("Delete", systemImage: "trash") }
                 Button(role: .destructive) { } label: { Label("Permanently Erase", systemImage: "trash.slash") }
             }
+        }
+    }
+}
+
+fileprivate struct ColorSwatchMenuCard: View {
+    @State private var colorName: String = "Blue"
+    private let swatches: [(name: String, color: Color)] = [
+        ("Red", .red), ("Orange", .orange), ("Yellow", .yellow), ("Green", .green), ("Blue", .blue), ("Purple", .purple)
+    ]
+    var body: some View {
+        Menu {
+            ForEach(swatches, id: \.name) { item in
+                Button(action: { colorName = item.name }) {
+                    HStack {
+                        Circle().fill(item.color).frame(width: 14, height: 14)
+                        Text(item.name)
+                        if colorName == item.name { Spacer(); Image(systemName: "checkmark") }
+                    }
+                }
+            }
+        } label: {
+            HStack { Circle().fill(swatches.first { $0.name == colorName }?.color ?? .blue).frame(width: 14, height: 14); Text("Theme: \(colorName)") }
         }
     }
 }
