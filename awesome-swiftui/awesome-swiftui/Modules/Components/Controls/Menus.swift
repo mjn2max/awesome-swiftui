@@ -58,6 +58,7 @@ struct Menus: View {
                 ItemCard(title: "20. Picker-backed Menu (Selection)") { PickerMenuCard() }
                 ItemCard(title: "21. Menu with Danger & General Sections") { DangerSectionsMenuCard() }
                 ItemCard(title: "22. Menu with Color Swatches") { ColorSwatchMenuCard() }
+                ItemCard(title: "23. Menu with Date Picker") { DatePickerMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -419,6 +420,21 @@ fileprivate struct ColorSwatchMenuCard: View {
             }
         } label: {
             HStack { Circle().fill(swatches.first { $0.name == colorName }?.color ?? .blue).frame(width: 14, height: 14); Text("Theme: \(colorName)") }
+        }
+    }
+}
+
+fileprivate struct DatePickerMenuCard: View {
+    @State private var date = Date()
+    var body: some View {
+        Menu("Pick Date") {
+            VStack(alignment: .leading, spacing: 8) {
+                DatePicker("Date", selection: $date, displayedComponents: .date)
+                    .labelsHidden()
+                Text(date.formatted(date: .abbreviated, time: .omitted)).font(.footnote).foregroundStyle(.secondary)
+            }
+            .padding(.vertical, 6)
+            .frame(width: 220)
         }
     }
 }
