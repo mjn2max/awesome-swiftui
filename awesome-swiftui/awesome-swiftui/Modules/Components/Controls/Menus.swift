@@ -59,6 +59,7 @@ struct Menus: View {
                 ItemCard(title: "21. Menu with Danger & General Sections") { DangerSectionsMenuCard() }
                 ItemCard(title: "22. Menu with Color Swatches") { ColorSwatchMenuCard() }
                 ItemCard(title: "23. Menu with Date Picker") { DatePickerMenuCard() }
+                ItemCard(title: "24. Menu for Assigning Avatars") { AssigneeMenuCard() }
             }
             .padding(20)
             .frame(maxWidth: 1100)
@@ -438,6 +439,29 @@ fileprivate struct DatePickerMenuCard: View {
         }
     }
 }
+
+fileprivate struct AssigneeMenuCard: View {
+    @State private var assignee: String = "Unassigned"
+    private let people: [(name: String, color: Color)] = [
+        ("Huy", .blue), ("Linh", .pink), ("Minh", .green), ("Anh", .orange)
+    ]
+    var body: some View {
+        Menu {
+            ForEach(people, id: \.name) { person in
+                Button(action: { assignee = person.name }) {
+                    HStack {
+                        Circle().fill(person.color).frame(width: 14, height: 14)
+                        Text(person.name)
+                        if assignee == person.name { Spacer(); Image(systemName: "checkmark") }
+                    }
+                }
+            }
+        } label: {
+            Label("Assignee: \(assignee)", systemImage: "person.crop.circle")
+        }
+    }
+}
+
 #Preview {
     NavigationStack {
         Menus()
