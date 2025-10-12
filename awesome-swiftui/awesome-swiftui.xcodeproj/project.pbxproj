@@ -31,6 +31,7 @@
 		6456123A2967B37500EC04BA /* awesome_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */; };
 		6456123C2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */; };
 		6462413D2E1E7B67005AF435 /* Foundations+AppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6462413C2E1E7B67005AF435 /* Foundations+AppleModel.swift */; };
+		6469961D2E99E2BD00727ECD /* Pickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469961C2E99E2BD00727ECD /* Pickers.swift */; };
 		646EAB6E2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB6D2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift */; };
 		646EAB702E1A985200211DC2 /* Components+ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB6F2E1A985200211DC2 /* Components+ListModel.swift */; };
 		646EAB722E1A98B200211DC2 /* Components+StructureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAB712E1A98B200211DC2 /* Components+StructureModel.swift */; };
@@ -94,6 +95,7 @@
 		645612392967B37500EC04BA /* awesome_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITests.swift; sourceTree = "<group>"; };
 		6456123B2967B37500EC04BA /* awesome_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awesome_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6462413C2E1E7B67005AF435 /* Foundations+AppleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundations+AppleModel.swift"; sourceTree = "<group>"; };
+		6469961C2E99E2BD00727ECD /* Pickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pickers.swift; sourceTree = "<group>"; };
 		646EAB6D2E1A969B00211DC2 /* Components+OtherLayoutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+OtherLayoutsModel.swift"; sourceTree = "<group>"; };
 		646EAB6F2E1A985200211DC2 /* Components+ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+ListModel.swift"; sourceTree = "<group>"; };
 		646EAB712E1A98B200211DC2 /* Components+StructureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+StructureModel.swift"; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				6426738E2E1311FE0047D30F /* Components+ControlsModel.swift */,
 				6441B5EF2E47FB5D0028399E /* ButtonsLinks.swift */,
 				644885042E4C20E40001AD49 /* Menus.swift */,
+				6469961C2E99E2BD00727ECD /* Pickers.swift */,
 				6441B5F12E47FE410028399E /* Indicator.swift */,
 			);
 			path = Controls;
@@ -582,6 +585,7 @@
 				64ED31F32E0EC53300114A19 /* ComponentsTabModel.swift in Sources */,
 				6434C78A2E1C74CB0003C5D8 /* Components+ModelPresentationsModel.swift in Sources */,
 				642673872E118B3B0047D30F /* FoundationsTabModel.swift in Sources */,
+				6469961D2E99E2BD00727ECD /* Pickers.swift in Sources */,
 				6441B5F82E4800840028399E /* Texts.swift in Sources */,
 				647E6F412CD46D60004491ED /* Constants.swift in Sources */,
 			);

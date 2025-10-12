@@ -41,6 +41,8 @@ enum ComponentControl: ItemProtocol {
             ButtonsLinks()
         case .menu:
             Menus()
+        case .picker:
+            Pickers()
         case .indicator:
             Indicator()
         default:
