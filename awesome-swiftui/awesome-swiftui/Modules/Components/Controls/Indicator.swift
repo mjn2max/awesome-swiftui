@@ -56,6 +56,11 @@ struct Indicator: View {
                     BouncingDotsIndicator()
                         .frame(width: 60, height: 20)
                 }
+
+                ItemCard(title: "Dashed Ring Spin") {
+                    DashedRingIndicator()
+                        .frame(width: 44, height: 44)
+                }
             }
             .padding()
         }
@@ -246,6 +251,21 @@ private struct BouncingDotsIndicator: View {
     }
 }
 
+private struct DashedRingIndicator: View {
+    @State private var rotation: Double = 0
+    var body: some View {
+        Circle()
+            .trim(from: 0, to: 1)
+            .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, dash: [6, 6]))
+            .foregroundStyle(Color.accentColor)
+            .rotationEffect(.degrees(rotation))
+            .onAppear {
+                withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
+                    rotation = 360
+                }
+            }
+    }
+}
 #Preview {
     NavigationStack {
         Indicator()
