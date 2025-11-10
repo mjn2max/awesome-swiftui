@@ -61,6 +61,11 @@ struct Indicator: View {
                     DashedRingIndicator()
                         .frame(width: 44, height: 44)
                 }
+
+                ItemCard(title: "Ripple Expanding Circles") {
+                    RippleIndicator()
+                        .frame(width: 60, height: 60)
+                }
             }
             .padding()
         }
@@ -264,6 +269,42 @@ private struct DashedRingIndicator: View {
                     rotation = 360
                 }
             }
+    }
+}
+
+private struct RippleIndicator: View {
+    @State private var scale1: CGFloat = 0.2
+    @State private var opacity1: CGFloat = 1
+    @State private var scale2: CGFloat = 0.2
+    @State private var opacity2: CGFloat = 1
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.accentColor.opacity(0.5), lineWidth: 3)
+                .scaleEffect(scale1)
+                .opacity(opacity1)
+            Circle()
+                .stroke(Color.accentColor.opacity(0.35), lineWidth: 3)
+                .scaleEffect(scale2)
+                .opacity(opacity2)
+            Circle()
+                .fill(Color.accentColor)
+                .frame(width: 10, height: 10)
+        }
+        .onAppear {
+            let base = Animation.easeOut(duration: 1.4).repeatForever(autoreverses: false)
+            withAnimation(base) {
+                scale1 = 1.2
+                opacity1 = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                withAnimation(base) {
+                    scale2 = 1.2
+                    opacity2 = 0
+                }
+            }
+        }
     }
 }
 #Preview {
