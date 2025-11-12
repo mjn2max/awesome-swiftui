@@ -66,6 +66,10 @@ struct Indicator: View {
                     RippleIndicator()
                         .frame(width: 60, height: 60)
                 }
+
+                ItemCard(title: "Equalizer Bars") {
+                    EqualizerBarsIndicator()
+                        .frame(width: 60, height: 24)
             }
             .padding()
         }
@@ -302,6 +306,40 @@ private struct RippleIndicator: View {
                 withAnimation(base) {
                     scale2 = 1.2
                     opacity2 = 0
+                }
+            }
+        }
+    }
+}
+
+private struct EqualizerBarsIndicator: View {
+    @State private var heights: [CGFloat] = [0.3, 0.6, 0.9, 0.5, 0.7]
+    let barCount = 5
+
+    var body: some View {
+        GeometryReader { geo in
+            let maxH = geo.size.height
+            HStack(alignment: .bottom, spacing: 4) {
+                ForEach(0..<barCount, id: \.self) { i in
+                    Capsule()
+                        .fill(Color.accentColor)
+                        .frame(width: 6, height: maxH * heights[i])
+                        .animation(
+                            Animation.easeInOut(duration: 0.5)
+                                .repeatForever(autoreverses: true)
+                                .delay(Double(i) * 0.08), value: heights[i]
+                        )
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        }
+        .onAppear {
+            for i in heights.indices {
+                heights[i] = .random(in: 0.3...1.0)
+            }
+            Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) { _ in
+                for i in heights.indices {
+                    heights[i] = .random(in: 0.3...1.0)
                 }
             }
         }
