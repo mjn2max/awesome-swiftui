@@ -70,6 +70,12 @@ struct Indicator: View {
                 ItemCard(title: "Equalizer Bars") {
                     EqualizerBarsIndicator()
                         .frame(width: 60, height: 24)
+                }
+
+                ItemCard(title: "Orbiting Dots") {
+                    OrbitingDotsIndicator()
+                        .frame(width: 44, height: 44)
+                }
             }
             .padding()
         }
@@ -343,6 +349,30 @@ private struct EqualizerBarsIndicator: View {
                 }
             }
         }
+    }
+}
+
+private struct OrbitingDotsIndicator: View {
+    @State private var rotate = false
+    let dotCount = 8
+
+    var body: some View {
+        GeometryReader { geo in
+            let r = min(geo.size.width, geo.size.height) / 2 - 4
+            ZStack {
+                ForEach(0..<dotCount, id: \.self) { i in
+                    Circle()
+                        .fill(Color.accentColor.opacity(Double(i + 1) / Double(dotCount)))
+                        .frame(width: 6, height: 6)
+                        .offset(x: 0, y: -r)
+                        .rotationEffect(.degrees(Double(i) * (360.0 / Double(dotCount))))
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .rotationEffect(.degrees(rotate ? 360 : 0))
+            .animation(.linear(duration: 1.4).repeatForever(autoreverses: false), value: rotate)
+        }
+        .onAppear { rotate = true }
     }
 }
 #Preview {
