@@ -76,6 +76,11 @@ struct Indicator: View {
                     OrbitingDotsIndicator()
                         .frame(width: 44, height: 44)
                 }
+
+                ItemCard(title: "Indeterminate Linear") {
+                    IndeterminateLinearIndicator()
+                        .frame(width: 80, height: 6)
+                }
             }
             .padding()
         }
@@ -375,6 +380,29 @@ private struct OrbitingDotsIndicator: View {
         .onAppear { rotate = true }
     }
 }
+
+private struct IndeterminateLinearIndicator: View {
+    @State private var offset: CGFloat = -1
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(Color.gray.opacity(0.2))
+                Capsule()
+                    .fill(Color.accentColor)
+                    .frame(width: geo.size.width * 0.35)
+                    .offset(x: geo.size.width * offset)
+            }
+        }
+        .onAppear {
+            withAnimation(.linear(duration: 1.0).repeatForever(autoreverses: false)) {
+                offset = 1.2
+            }
+        }
+    }
+}
+
 #Preview {
     NavigationStack {
         Indicator()
@@ -382,3 +410,4 @@ private struct OrbitingDotsIndicator: View {
             .frame(height: 600)
     }
 }
+
